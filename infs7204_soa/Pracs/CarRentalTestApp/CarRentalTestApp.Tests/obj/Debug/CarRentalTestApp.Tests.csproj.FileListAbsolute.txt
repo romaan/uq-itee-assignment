@@ -1,0 +1,1 @@
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\CarRentalTestApp\CarRentalTestApp.Tests\obj\Debug\ResolveAssemblyReference.cache

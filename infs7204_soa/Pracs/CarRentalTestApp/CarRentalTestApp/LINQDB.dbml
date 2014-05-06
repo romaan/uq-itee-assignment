@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CarRentalDatabase" Class="LINQDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\CarRentalDatabase.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CarRentalDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.VehicleCategory" Member="VehicleCategories">
+    <Type Name="VehicleCategory">
+      <Column Name="vehicle_category_code" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="vehicle_category_description" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="VehicleCategory_Vehicle" Member="Vehicles" ThisKey="vehicle_category_code" OtherKey="vehicle_category_code" Type="Vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Model" Member="Models">
+    <Type Name="Model">
+      <Column Name="model_code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="body_style" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="automatic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="passenger_capacity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Model_Vehicle" Member="Vehicles" ThisKey="model_code" OtherKey="model_code" Type="Vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Manufacturer" Member="Manufacturers">
+    <Type Name="Manufacturer">
+      <Column Name="manufacturer_code" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="manufacturer_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Manufacturer_Vehicle" Member="Vehicles" ThisKey="manufacturer_code" OtherKey="manufacturer_code" Type="Vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vehicle" Member="Vehicles">
+    <Type Name="Vehicle">
+      <Column Name="vehicle_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="registration_number" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="manufacturer_code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="model_code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="vehicle_category_code" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="manufacturing_date" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="daily_hire_rate" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="availability" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="current_city" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Vehicle_Booking" Member="Bookings" ThisKey="vehicle_id" OtherKey="vehicle_id" Type="Booking" />
+      <Association Name="Manufacturer_Vehicle" Member="Manufacturer" ThisKey="manufacturer_code" OtherKey="manufacturer_code" Type="Manufacturer" IsForeignKey="true" />
+      <Association Name="Model_Vehicle" Member="Model" ThisKey="model_code" OtherKey="model_code" Type="Model" IsForeignKey="true" />
+      <Association Name="VehicleCategory_Vehicle" Member="VehicleCategory" ThisKey="vehicle_category_code" OtherKey="vehicle_category_code" Type="VehicleCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="customer_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="age" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gender" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="phone_number" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="VarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="city" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Customer_Booking" Member="Bookings" ThisKey="customer_id" OtherKey="customer_id" Type="Booking" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BookingStatus" Member="BookingStatus">
+    <Type Name="BookingStatus">
+      <Column Name="booking_status_code" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="booking_status_description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="BookingStatus_Booking" Member="Bookings" ThisKey="booking_status_code" OtherKey="booking_status_code" Type="Booking" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Booking" Member="Bookings">
+    <Type Name="Booking">
+      <Column Name="booking_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="booking_status_code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="customer_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vehicle_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pickup_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="return_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="pickup_city" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="return_city" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="BookingStatus_Booking" Member="BookingStatus" ThisKey="booking_status_code" OtherKey="booking_status_code" Type="BookingStatus" IsForeignKey="true" />
+      <Association Name="Customer_Booking" Member="Customer" ThisKey="customer_id" OtherKey="customer_id" Type="Customer" IsForeignKey="true" />
+      <Association Name="Vehicle_Booking" Member="Vehicle" ThisKey="vehicle_id" OtherKey="vehicle_id" Type="Vehicle" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

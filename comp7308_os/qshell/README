@@ -1,0 +1,7 @@
+# RUN MAKE
+# make  
+#Make dist prepares archive and saves it in the parent directory.
+# ./qshell #will run the program
+# ./qshell <file_with_command>  
+# Example ./qshell filetest  #Assuming the present working directory contains filetest and qshell
+# PLEASE NOTE The man pages cannot be invoked just by the command "man qshell". This is because the qshell is not added to MANPATH or copied to path where man pages are search due to lack of user permission. The workaround is to run qshellman1.sh and qshellman8.sh to run the man pages.

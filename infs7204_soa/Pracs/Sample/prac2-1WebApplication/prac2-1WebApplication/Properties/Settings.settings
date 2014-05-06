@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="prac2_1WebApplication.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="prac2_1WebApplication_wordCounterRef_wordHighlighter" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:49321/wordCounter.asmx</Value>
+    </Setting>
+    <Setting Name="prac2_1WebApplication_wordReplaceRef_wordReplace" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:49321/wordReplace.asmx</Value>
+    </Setting>
+    <Setting Name="prac2_1WebApplication_textCounterRef_TextCounterWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:49321/TextCounterWebService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

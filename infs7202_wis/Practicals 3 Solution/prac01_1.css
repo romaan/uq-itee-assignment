@@ -1,0 +1,42 @@
+
+/*Making heading centered*/
+h1
+{
+color:blue;
+text-align:center;
+}
+
+/*Unordered list -> Bring in same line, add padding, make upper case*/
+#nav li
+{
+display: inline-block;
+background-color: green;
+padding: 6px;
+text-transform: uppercase
+}
+
+/*Bring the navigation bar to center*/
+#nav
+{
+text-align:center;
+}
+
+/*Make the table appear better*/
+table
+{
+width:90%;
+text-align:center;
+border: 2px;
+}
+
+/*Make all the images appear the same size*/
+img
+{
+width:300px;
+height:300px;
+}
+
+/*Link*/
+#nav a {color:#FF0000;text-decoration: none; font-weight:bold; padding: 6px}      /* unvisited link */
+#nav a:hover {color:#FF00FF;padding: 6px}  /* mouse over link */
+

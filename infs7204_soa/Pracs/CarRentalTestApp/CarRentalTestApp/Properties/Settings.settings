@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CarRentalTestApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CarRentalTestApp_CardVerifyWebRef_CardVerification" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58158/CardVerification.asmx</Value>
+    </Setting>
+    <Setting Name="CarRentalTestApp_DatabaseWebRef_LINQDatabase" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58158/LINQDatabase.asmx</Value>
+    </Setting>
+    <Setting Name="CarRentalTestApp_SendEmailWebRef_SendEmailService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58158/SendEmailService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

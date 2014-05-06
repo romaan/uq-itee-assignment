@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQUserInformation">
+  <DataContextMoniker Name="/LINQUserInformationDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dbc525c5-c35c-4fc4-8f7f-4063f6e4a5f1" absoluteBounds="3.875, 1.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LINQUserInformationDataContext/LoginInformation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9eb4d071-b2bc-416e-ab8b-32ee021ee647" absoluteBounds="3.89, 1.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.57431705603966 : 2.8862939453125); (4.57431705603966 : 3.1362939453125); (5.19000117938702 : 3.1362939453125); (5.19000117938702 : 2.8862939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LINQUserInformationDataContext/LoginInformation/LoginInformation_LoginInformation" />
+      <nodes>
+        <classShapeMoniker Id="dbc525c5-c35c-4fc4-8f7f-4063f6e4a5f1" />
+        <classShapeMoniker Id="dbc525c5-c35c-4fc4-8f7f-4063f6e4a5f1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

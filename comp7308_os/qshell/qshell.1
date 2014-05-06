@@ -1,0 +1,44 @@
+.\" Man pages for QShell 
+.\" By Romaan Khadeer Ahmed
+.\"
+.TH QSHELL 1 2013-07-30 "QShell" "A Simple Shell"
+.SH NAME
+qshell \- Custom shell for COMP7308, UQ, 2013
+.SH SYNOPSIS
+.LP
+.B qshell [input_script]
+.LP
+.B command [arg1 arg2 ... ] [< input_file] [> output_file] [&] 
+.LP
+.B command [arg1 arg2 ... ] [> output_file] [< input_file] [&]
+.LP
+.B command [arg1 arg2 ... ] [< input_file] | command [arg1 arg2 ...] [> output_file]
+
+.SH DESCRIPTION
+This manual page explains the
+.B "qshell"
+implementation, its functionality and limitations. qShell is built using C programming language. It accepts the command, passes it to the parser function to analyze the user-input and executes the command with creating new child processes. Also, it manages the input and output to a command using redirection and pipe operators.
+.BR 
+.PP
+.SS Features implemented
+The qshell supports the following:
+.TP 
+| The output of first command can be redirected to other
+.TP
+> The output of a command can be redirected to a file
+.TP
+< The input for a command can be redirected from a file
+.SS Other Features implemented
+The qshell also supports the follwing:
+.TP
+A foreground command can be interrupted using Ctrl + C
+.TP
+A background process ID is printed when a command is executed in background
+.TP
+A background process ID and its exit status is printed when it terminates
+.TP
+Ctrl + C does not affect the execution of background tasks
+.SH AUTHOR
+Romaan
+.BR
+romaan.ahmed@uqconnect.edu.au

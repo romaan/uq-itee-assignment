@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Information System Practical 03-01</title>
+<link rel="stylesheet" type="text/css" href="prac03_01.css"/>
+<script type="text/javascript">
+<!--
+function setCookie()
+{
+	if (document.credential.username.value == "s1234" && document.credential.password.value == "1234")
+	{
+	 var date = new Date(); 
+	 date.setTime(date.getTime()+(30*1000)); 
+	 var expires = "; expires="+date.toGMTString(); 
+	 document.cookie="user=set;expires="+expires;
+	 window.location="gallery.html";
+	}
+	else
+	{
+	document.getElementById("user_message").innerHTML = "Invalid Username or password";
+	}
+	return true;
+}
+
+function getCookie(c_name)
+{
+var i,x,y,ARRcookies=document.cookie.split(";");
+for (i=0;i<ARRcookies.length;i++)
+  {
+  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+  x=x.replace(/^\s+|\s+$/g,"");
+  if (x==c_name)
+    {
+        alert(y);
+    return unescape(y);
+    }
+  }
+  return null;
+}
+
+function checkCookie()
+{
+var user=getCookie("user");
+   if (user!=null && user!="" && user=="set")
+   {
+   document.writeln("User logged in");
+   }
+   return true;
+}
+//-->
+</script>
+</head>
+<body onLoad="checkCookie()">
+<div id="login">
+<div id="user_message"></div>
+<br/><br/>
+<form name="credential"/>
+Login: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="username"/>
+<br/><br/>
+Password: <input type="password" name="password"/>
+<br/><br/><input type="button" value="Login" onClick="setCookie()"/>
+</form>
+</div>
+</body>
+</html>

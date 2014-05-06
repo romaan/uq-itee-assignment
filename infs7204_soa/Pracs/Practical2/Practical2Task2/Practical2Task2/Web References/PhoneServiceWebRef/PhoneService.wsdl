@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saving contacts in file</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="addContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="content" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="addContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addContactResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchByNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="addContactSoapIn">
+    <wsdl:part name="parameters" element="tns:addContact" />
+  </wsdl:message>
+  <wsdl:message name="addContactSoapOut">
+    <wsdl:part name="parameters" element="tns:addContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:searchByName" />
+  </wsdl:message>
+  <wsdl:message name="searchByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:searchByNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PhoneServiceSoap">
+    <wsdl:operation name="addContact">
+      <wsdl:input message="tns:addContactSoapIn" />
+      <wsdl:output message="tns:addContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchByName">
+      <wsdl:input message="tns:searchByNameSoapIn" />
+      <wsdl:output message="tns:searchByNameSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PhoneServiceSoap" type="tns:PhoneServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addContact">
+      <soap:operation soapAction="http://tempuri.org/addContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchByName">
+      <soap:operation soapAction="http://tempuri.org/searchByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PhoneServiceSoap12" type="tns:PhoneServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addContact">
+      <soap12:operation soapAction="http://tempuri.org/addContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchByName">
+      <soap12:operation soapAction="http://tempuri.org/searchByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PhoneService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saving contacts in file</wsdl:documentation>
+    <wsdl:port name="PhoneServiceSoap" binding="tns:PhoneServiceSoap">
+      <soap:address location="http://localhost:50624/PhoneService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PhoneServiceSoap12" binding="tns:PhoneServiceSoap12">
+      <soap12:address location="http://localhost:50624/PhoneService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

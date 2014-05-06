@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="SaveCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="customer_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="first_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="last_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="age" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="gender" type="s1:char" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone_number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bookings" type="tns:ArrayOfBooking" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBooking">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Booking" nillable="true" type="tns:Booking" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Booking">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="booking_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="booking_status_code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="customer_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="vehicle_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="pickup_date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="return_date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="pickup_city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="return_city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingStatus" type="tns:BookingStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="Customer" type="tns:Customer" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vehicle" type="tns:Vehicle" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BookingStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="booking_status_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="booking_status_description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bookings" type="tns:ArrayOfBooking" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Vehicle">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="vehicle_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="registration_number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="manufacturer_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="model_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vehicle_category_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="manufacturing_date" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="daily_hire_rate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="availability" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="current_city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bookings" type="tns:ArrayOfBooking" />
+          <s:element minOccurs="0" maxOccurs="1" name="Manufacturer" type="tns:Manufacturer" />
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="tns:Model" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleCategory" type="tns:VehicleCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Manufacturer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="manufacturer_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="manufacturer_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vehicles" type="tns:ArrayOfVehicle" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVehicle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Vehicle" nillable="true" type="tns:Vehicle" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Model">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="model_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="body_style" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="automatic" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="passenger_capacity" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vehicles" type="tns:ArrayOfVehicle" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VehicleCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="vehicle_category_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vehicle_category_description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vehicles" type="tns:ArrayOfVehicle" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveCustomerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReview">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vehicle_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReviewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReviewResult" type="tns:ReviewModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReviewModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="registration_number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="manufacturer_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="model_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="body_style" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="automatic" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="passenger_capacity" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="vehicle_category_description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="manufacturing_date" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="availability" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="daily_rental_rate" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="b" type="tns:Booking" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveBookingResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SaveCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveCustomer" />
+  </wsdl:message>
+  <wsdl:message name="SaveCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReviewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReview" />
+  </wsdl:message>
+  <wsdl:message name="GetReviewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveBooking" />
+  </wsdl:message>
+  <wsdl:message name="SaveBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveBookingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LINQDatabaseSoap">
+    <wsdl:operation name="SaveCustomer">
+      <wsdl:input message="tns:SaveCustomerSoapIn" />
+      <wsdl:output message="tns:SaveCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReview">
+      <wsdl:input message="tns:GetReviewSoapIn" />
+      <wsdl:output message="tns:GetReviewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBooking">
+      <wsdl:input message="tns:SaveBookingSoapIn" />
+      <wsdl:output message="tns:SaveBookingSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LINQDatabaseSoap" type="tns:LINQDatabaseSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveCustomer">
+      <soap:operation soapAction="http://tempuri.org/SaveCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReview">
+      <soap:operation soapAction="http://tempuri.org/GetReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBooking">
+      <soap:operation soapAction="http://tempuri.org/SaveBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LINQDatabaseSoap12" type="tns:LINQDatabaseSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveCustomer">
+      <soap12:operation soapAction="http://tempuri.org/SaveCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReview">
+      <soap12:operation soapAction="http://tempuri.org/GetReview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBooking">
+      <soap12:operation soapAction="http://tempuri.org/SaveBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LINQDatabase">
+    <wsdl:port name="LINQDatabaseSoap" binding="tns:LINQDatabaseSoap">
+      <soap:address location="http://localhost:58158/LINQDatabase.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LINQDatabaseSoap12" binding="tns:LINQDatabaseSoap12">
+      <soap12:address location="http://localhost:58158/LINQDatabase.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

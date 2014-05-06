@@ -1,0 +1,4 @@
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1-2WebApp\Prac1-2WebApp\bin\Prac1-2WebApp.dll
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1-2WebApp\Prac1-2WebApp\bin\Prac1-2WebApp.pdb
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1-2WebApp\Prac1-2WebApp\obj\Debug\Prac1-2WebApp.dll
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1-2WebApp\Prac1-2WebApp\obj\Debug\Prac1-2WebApp.pdb

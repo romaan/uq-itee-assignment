@@ -1,0 +1,8 @@
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical4\Practical2Task2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical4\Practical2Task2\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical4\Practical2Task2\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical4\Practical2Task2\bin\Phonebook.dll
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical4\Practical2Task2\bin\Phonebook.pdb
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical4\Practical2Task2\obj\Debug\Phonebook.Properties.Resources.resources
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical4\Practical2Task2\obj\Debug\Phonebook.dll
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical4\Practical2Task2\obj\Debug\Phonebook.pdb

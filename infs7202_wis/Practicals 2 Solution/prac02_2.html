@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Information System Practical 2 File 2</title>
+<link rel="stylesheet" href="prac02_2.css"/>
+<script type="text/javascript">
+ function allowDrop(ev)
+ {
+ ev.preventDefault();
+ }
+
+ function drag(ev)
+ {
+ ev.dataTransfer.setData("Text",ev.target.id);
+ }
+
+ function drop(ev)
+ {
+ var data=ev.dataTransfer.getData("Text");
+var tmp = document.getElementById(data);
+
+	if (ev.target.nodeName == "DIV")
+	{
+	 ev.target.appendChild(tmp);
+	}
+	else
+	{
+	ev.target.parentNode.appendChild(tmp);
+	}
+ ev.preventDefault();
+ }
+ </script>
+</head>
+<body>
+<h1>Gallery</h1>
+<hr/>
+<table width="100%">
+<tr><td width="60%"><h3>All Photos</h3></td><td width="40%"><h3>Selected Album</h3></td></tr>
+</table>
+
+<div id="all" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<img src="001.jpg" draggable="true" ondragstart="drag(event)" id="drag1" />
+	<img src="002.jpg" draggable="true" ondragstart="drag(event)" id="drag2" />
+	<img src="003.jpg" draggable="true" ondragstart="drag(event)" id="drag3" />
+	<img src="004.jpg" draggable="true" ondragstart="drag(event)" id="drag4" />
+	<img src="005.jpg" draggable="true" ondragstart="drag(event)" id="drag5" />
+	<img src="006.jpg" draggable="true" ondragstart="drag(event)" id="drag6" />
+	<img src="007.jpg" draggable="true" ondragstart="drag(event)" id="drag7" />
+</div>
+
+<div id="selected" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+</div>
+
+</body>
+</html>

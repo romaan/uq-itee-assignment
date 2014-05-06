@@ -1,0 +1,7 @@
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\AzureReturnString\AzureReturnString\bin\Debug\ServiceConfiguration.cscfg
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\AzureReturnString\AzureReturnString\obj\Debug\WCFServiceWebRole1\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\AzureReturnString\AzureReturnString\obj\Debug\WCFServiceWebRole1\bin\Microsoft.WindowsAzure.Diagnostics.dll
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\AzureReturnString\AzureReturnString\obj\Debug\WCFServiceWebRole1\bin\Microsoft.WindowsAzure.Diagnostics.xml
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\AzureReturnString\AzureReturnString\obj\Debug\WCFServiceWebRole1\bin\Microsoft.WindowsAzure.StorageClient.dll
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\AzureReturnString\AzureReturnString\obj\Debug\WCFServiceWebRole1\bin\WCFServiceWebRole1.dll
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\AzureReturnString\AzureReturnString\obj\Debug\WCFServiceWebRole1\bin\WCFServiceWebRole1.pdb

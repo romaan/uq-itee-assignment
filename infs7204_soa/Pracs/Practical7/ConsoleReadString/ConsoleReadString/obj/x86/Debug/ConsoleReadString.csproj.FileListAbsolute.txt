@@ -1,0 +1,5 @@
+c:\users\roman\documents\visual studio 2010\Projects\ConsoleReadString\ConsoleReadString\bin\Debug\ConsoleReadString.exe.config
+c:\users\roman\documents\visual studio 2010\Projects\ConsoleReadString\ConsoleReadString\bin\Debug\ConsoleReadString.exe
+c:\users\roman\documents\visual studio 2010\Projects\ConsoleReadString\ConsoleReadString\bin\Debug\ConsoleReadString.pdb
+c:\users\roman\documents\visual studio 2010\Projects\ConsoleReadString\ConsoleReadString\obj\x86\Debug\ConsoleReadString.exe
+c:\users\roman\documents\visual studio 2010\Projects\ConsoleReadString\ConsoleReadString\obj\x86\Debug\ConsoleReadString.pdb

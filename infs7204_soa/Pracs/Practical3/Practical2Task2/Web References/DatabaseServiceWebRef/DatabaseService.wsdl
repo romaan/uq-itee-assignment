@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accessing database</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="fullNameExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fullNameExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fullNameExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="phoneExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="phoneExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="phoneExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="saveContact">
+        <s:complexType />
+      </s:element>
+      <s:element name="saveContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="saveContactResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getContact">
+        <s:complexType />
+      </s:element>
+      <s:element name="getContactResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="updateContact">
+        <s:complexType />
+      </s:element>
+      <s:element name="updateContactResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="remindBirthday">
+        <s:complexType />
+      </s:element>
+      <s:element name="remindBirthdayResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="fullNameExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:fullNameExists" />
+  </wsdl:message>
+  <wsdl:message name="fullNameExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:fullNameExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="phoneExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:phoneExists" />
+  </wsdl:message>
+  <wsdl:message name="phoneExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:phoneExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveContactSoapIn">
+    <wsdl:part name="parameters" element="tns:saveContact" />
+  </wsdl:message>
+  <wsdl:message name="saveContactSoapOut">
+    <wsdl:part name="parameters" element="tns:saveContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="getContactSoapIn">
+    <wsdl:part name="parameters" element="tns:getContact" />
+  </wsdl:message>
+  <wsdl:message name="getContactSoapOut">
+    <wsdl:part name="parameters" element="tns:getContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateContactSoapIn">
+    <wsdl:part name="parameters" element="tns:updateContact" />
+  </wsdl:message>
+  <wsdl:message name="updateContactSoapOut">
+    <wsdl:part name="parameters" element="tns:updateContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="remindBirthdaySoapIn">
+    <wsdl:part name="parameters" element="tns:remindBirthday" />
+  </wsdl:message>
+  <wsdl:message name="remindBirthdaySoapOut">
+    <wsdl:part name="parameters" element="tns:remindBirthdayResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DatabaseServiceSoap">
+    <wsdl:operation name="fullNameExists">
+      <wsdl:input message="tns:fullNameExistsSoapIn" />
+      <wsdl:output message="tns:fullNameExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="phoneExists">
+      <wsdl:input message="tns:phoneExistsSoapIn" />
+      <wsdl:output message="tns:phoneExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="saveContact">
+      <wsdl:input message="tns:saveContactSoapIn" />
+      <wsdl:output message="tns:saveContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getContact">
+      <wsdl:input message="tns:getContactSoapIn" />
+      <wsdl:output message="tns:getContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateContact">
+      <wsdl:input message="tns:updateContactSoapIn" />
+      <wsdl:output message="tns:updateContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="remindBirthday">
+      <wsdl:input message="tns:remindBirthdaySoapIn" />
+      <wsdl:output message="tns:remindBirthdaySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DatabaseServiceSoap" type="tns:DatabaseServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="fullNameExists">
+      <soap:operation soapAction="http://tempuri.org/fullNameExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="phoneExists">
+      <soap:operation soapAction="http://tempuri.org/phoneExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveContact">
+      <soap:operation soapAction="http://tempuri.org/saveContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContact">
+      <soap:operation soapAction="http://tempuri.org/getContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateContact">
+      <soap:operation soapAction="http://tempuri.org/updateContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remindBirthday">
+      <soap:operation soapAction="http://tempuri.org/remindBirthday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DatabaseServiceSoap12" type="tns:DatabaseServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="fullNameExists">
+      <soap12:operation soapAction="http://tempuri.org/fullNameExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="phoneExists">
+      <soap12:operation soapAction="http://tempuri.org/phoneExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveContact">
+      <soap12:operation soapAction="http://tempuri.org/saveContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContact">
+      <soap12:operation soapAction="http://tempuri.org/getContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateContact">
+      <soap12:operation soapAction="http://tempuri.org/updateContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remindBirthday">
+      <soap12:operation soapAction="http://tempuri.org/remindBirthday" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DatabaseService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accessing database</wsdl:documentation>
+    <wsdl:port name="DatabaseServiceSoap" binding="tns:DatabaseServiceSoap">
+      <soap:address location="http://localhost:50624/DatabaseService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DatabaseServiceSoap12" binding="tns:DatabaseServiceSoap12">
+      <soap12:address location="http://localhost:50624/DatabaseService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

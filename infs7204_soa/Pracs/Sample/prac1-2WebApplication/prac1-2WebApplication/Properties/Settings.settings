@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="prac1_2WebApplication.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="prac1_2WebApplication_AreaCodeValidatorRef_AreaCodeValidatorWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50045/AreaCodeValidatorWebService.asmx</Value>
+    </Setting>
+    <Setting Name="prac1_2WebApplication_AddSearchRef_AddSearchWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50045/AddSearchWebService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

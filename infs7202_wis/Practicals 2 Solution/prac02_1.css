@@ -1,0 +1,35 @@
+/*Making heading centered*/
+h1
+{
+color:blue;
+text-align:center;
+}
+
+#container 
+{
+width:100%;
+}
+
+#menu
+{
+width: 10%;
+}
+/*Make the length of each cell the same size as that of the image*/
+#picturetable td
+{
+width:200px;
+height:200px;
+}
+
+/*Make all the images appear the same size*/
+img
+{
+width:200px;
+height:200px;
+}
+
+/*Link be same color after and before click*/
+a
+{
+color: blue;
+}

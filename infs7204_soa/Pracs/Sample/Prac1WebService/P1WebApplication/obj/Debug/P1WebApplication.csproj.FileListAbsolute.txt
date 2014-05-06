@@ -1,0 +1,4 @@
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1WebService\P1WebApplication\bin\P1WebApplication.dll
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1WebService\P1WebApplication\bin\P1WebApplication.pdb
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1WebService\P1WebApplication\obj\Debug\P1WebApplication.dll
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1WebService\P1WebApplication\obj\Debug\P1WebApplication.pdb

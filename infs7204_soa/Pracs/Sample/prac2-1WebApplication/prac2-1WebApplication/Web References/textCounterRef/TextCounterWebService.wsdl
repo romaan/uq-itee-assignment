@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="textCounter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="textCounterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="textCounterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="textCounterSoapIn">
+    <wsdl:part name="parameters" element="tns:textCounter" />
+  </wsdl:message>
+  <wsdl:message name="textCounterSoapOut">
+    <wsdl:part name="parameters" element="tns:textCounterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TextCounterWebServiceSoap">
+    <wsdl:operation name="textCounter">
+      <wsdl:input message="tns:textCounterSoapIn" />
+      <wsdl:output message="tns:textCounterSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TextCounterWebServiceSoap" type="tns:TextCounterWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="textCounter">
+      <soap:operation soapAction="http://tempuri.org/textCounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TextCounterWebServiceSoap12" type="tns:TextCounterWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="textCounter">
+      <soap12:operation soapAction="http://tempuri.org/textCounter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TextCounterWebService">
+    <wsdl:port name="TextCounterWebServiceSoap" binding="tns:TextCounterWebServiceSoap">
+      <soap:address location="http://localhost:49321/TextCounterWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TextCounterWebServiceSoap12" binding="tns:TextCounterWebServiceSoap12">
+      <soap12:address location="http://localhost:49321/TextCounterWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

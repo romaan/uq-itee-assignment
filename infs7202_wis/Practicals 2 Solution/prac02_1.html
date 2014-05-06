@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--<!DOCTYPE html PUBLIC -->
+<html>
+<head>
+<title>Web Information System Practical 02</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="prac02_1.css" />
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript" src="scriptaculous.js?load=effects,builder"></script>
+<script type="text/javascript" src="lightbox.js"></script>
+<link rel="stylesheet" href="lightbox.css" type="text/css" media="screen" />
+
+
+<script type="text/javascript">
+
+function displayEffect($src)
+{
+	switch($src)
+	{
+	case '1':
+		Effect.Fade('21');Effect.Fade('22');Effect.Fade('23');
+		Effect.Fade('31');Effect.Fade('32');Effect.Fade('33');
+		Effect.Fade('11');Effect.Fade('12');Effect.Fade('13');
+		Effect.Appear('11');Effect.Appear('12');Effect.Appear('13');
+		break;
+	case  '2':
+		Effect.Fade('11');Effect.Fade('12');Effect.Fade('13');
+		Effect.Fade('31');Effect.Fade('32');Effect.Fade('33');
+		Effect.Appear('21');Effect.Appear('22');Effect.Appear('23');
+		break;
+	case  '3':
+		Effect.Fade('11');Effect.Fade('12');Effect.Fade('13');
+		Effect.Fade('21');Effect.Fade('22');Effect.Fade('23');
+		Effect.Appear('31');Effect.Appear('32');Effect.Appear('33');
+		break;
+	}
+}
+</script>
+</head>
+<body onLoad="displayEffect('1')">
+<h1>My Gallery</h1>
+<table id="container">
+<tr valign="top">
+<td id="menu"><h3>Album list:</h3><ul><li><a href="#" onClick="displayEffect('1')">Intel</a></li><li><a href="#" onClick="displayEffect('2')">Linux</a></li><li><a href="#" onClick="displayEffect('3')">Apple</a></li></ul></td>
+<td >
+
+<a href="gordon001.jpg" rel="lightbox[1]"><img id="11" src="gordon001.jpg"/></a><a href="brin002.jpg" rel="lightbox[1]"><img id="12" src="brin002.jpg"/></a><a href="steve004.jpg" rel="lightbox[1]"><img id="13" src="steve004.jpg"/></a>
+<br/>
+<a href="gordon001.jpg" rel="lightbox[2]"><img id="21" src="gordon001.jpg"/></a><a href="brin002.jpg" rel="lightbox[2]"><img id="22" src="brin002.jpg"/></a><a href="steve004.jpg" rel="lightbox[2]"><img id="23" src="steve004.jpg"/></a>
+<br/>
+<a href="gordon001.jpg" rel="lightbox[3]"><img id="31" src="gordon001.jpg"/></a><a href="brin002.jpg" rel="lightbox[3]"><img id="32" src="brin002.jpg"/></a><a href="steve004.jpg" rel="lightbox[3]"><img id="33" src="steve004.jpg"/></a>
+<br/>
+</td>		
+</tr></table>
+</body>
+</html>

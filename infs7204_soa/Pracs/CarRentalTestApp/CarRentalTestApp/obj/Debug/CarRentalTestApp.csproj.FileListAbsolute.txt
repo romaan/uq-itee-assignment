@@ -1,0 +1,5 @@
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\CarRentalTestApp\CarRentalTestApp\bin\CarRentalTestApp.dll
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\CarRentalTestApp\CarRentalTestApp\bin\CarRentalTestApp.pdb
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\CarRentalTestApp\CarRentalTestApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\CarRentalTestApp\CarRentalTestApp\obj\Debug\CarRentalTestApp.dll
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\CarRentalTestApp\CarRentalTestApp\obj\Debug\CarRentalTestApp.pdb

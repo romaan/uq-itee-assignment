@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!--Web Information Systems Practical 1 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="prac01_1.css" />
+
+</head>
+<body onload="runMe()">
+<form name="f1"><input type="button" name="log" value="Logout" onClick="logoutClick()"/></form>
+<br/>
+<hr/>
+<h1>Web Information System</h1>
+<hr/>
+<ul id="nav">
+<li><a href="http://www.uq.edu.au" target="_blank">Page 1</a></li>
+<li><a href="http://www.google.com" target="_blank">Page 2</a></li>
+<li><a href="http://www.yahoo.com" target="_blank">Page 3</a></li>
+</ul>
+<hr/>
+
+<!-- Table starts-->
+<table>
+
+<tr>
+<td><a href="annote.php?img=gordon001.jpg" target="_blank"><img src="gordon001.jpg" alt="Intel"/></a><br/><b>Intel</b></td>
+<td><a href="annote.php?img=brin002.jpg" target="_blank"><img src="brin002.jpg" alt="Google"/></a><br/><b>Google</b></td>
+<td><a href="annote.php?img=babbage003.jpg" target="_blank"><img src="babbage003.jpg" alt="Father of computer"/></a><br/><b>Father of Computer</b></td>
+</tr>
+
+<tr>
+<td><a href="annote.php?img=steve004.jpg" target="_blank"><img src="steve004.jpg" alt="Apple"/></a><br/><b>Apple</b></td>
+<td><a href="annote.php?img=billgates005.jpg" target="_blank"><img src="billgates005.jpg" alt="Microsoft"/></a><br/><b>Microsoft</b></td>
+<td><a href="annote.php?img=linux006.jpg" target="_blank"><img src="linux006.jpg" alt="Linux"/></a><br/><b>Linux</b></td>
+</tr>
+
+</table>
+<!--Table ends-->
+
+<hr/>
+
+
+<script type="text/javascript">
+<!--
+var time = 30;
+
+function deleteCookie()
+{
+	 var date = new Date(); 
+	 date.setTime(date.getTime()-1); 
+	 var expires = "; expires="+date.toGMTString(); 
+	 document.cookie="user=set;expires="+expires;
+	return true;
+}
+
+function getCookie(c_name)
+
+{
+
+var i,x,y,ARRcookies=document.cookie.split(";");
+
+	for (i=0;i<ARRcookies.length;i++)
+  
+	{
+  
+	x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+  
+	y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+
+	x=x.replace(/^\s+|\s+$/g,"");
+ 
+		if (x==c_name)
+    
+		{
+    
+		return unescape(y);
+    
+		}
+ 
+	}
+
+}
+
+
+function checkCookie()
+{
+var user=getCookie("user");
+	if (user!=null && user=="set")
+	{
+		document.f1.log.value = "Logout";
+		return true;
+	}
+	else
+	{
+		document.f1.log.value = "Login";	
+	}
+	return false;
+}
+
+function logoutClick()
+{
+if (document.f1.log.value == "Login")
+	{
+	document.location = "login.html";
+	}
+deleteCookie();
+clearTimeout(myClock);
+document.title="Logged Off";
+document.f1.log.value = "Login";	
+}
+
+function myClock() { 
+	if ( document.f1.log.value == "Login")
+	{
+	return;
+	}
+	checkCookie();
+	if (time == 0) {
+	document.title = "Time Out";
+	clearTimeout(myClock);
+	deleteCookie();
+	document.f1.log.value = "Login";
+	}
+	else if (time!=null)
+	{
+	document.title = "Time Out in Sec: "+time ;
+	time--;
+	}
+	setTimeout(myClock,1000);
+} 
+
+function setCookie()
+{
+	//if (checkCookie()==true)
+	//{			//In case of refresh we set the cookie again for next 30 secs, i.e. when cookie is present we just extend it
+	//return;
+	//}	//In case if the page is directed from login.html, we check if cookie is set, if so we just continue
+
+	 var date = new Date(); 
+	 date.setTime(date.getTime()+(30*1000)); 
+	 var expires = "; expires="+date.toGMTString(); 
+	 document.cookie="user=set;expires="+expires;
+	 time = 30;
+	 myClock();
+	
+	 return true;
+}
+
+function runMe() 
+{
+	if (checkCookie() == true) 
+	{
+	setCookie();
+	}
+
+}
+
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="de278340-e084-44c3-8ee7-32998c11fc73" name="Roman@WIN-KLV7HCI6751 2012-09-12 14:46:56" runUser="WIN-KLV7HCI6751\Roman" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="5e900005-69f0-4b90-9aa5-ee673661e5e5">
+    <Deployment runDeploymentRoot="Roman_WIN-KLV7HCI6751 2012-09-12 14_46_56">
+      <DeploymentItem filename="c:\users\roman\documents\visual studio 2010\Projects\CarRentalTestApp\CarRentalTestApp\bin\CarRentalTestApp.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-09-12T14:46:56.9182798+10:00" queuing="2012-09-12T14:47:05.6567796+10:00" start="2012-09-12T14:47:06.2548138+10:00" finish="2012-09-12T14:47:09.8100172+10:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="17" executed="17" passed="17" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="LogOn_Post_ReturnsRedirectOnSuccess_WithReturnUrl" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="676b416f-92e6-bacf-18cb-a6575d9e3f24">
+      <Execution id="4f7569ba-74be-4aa8-90e3-498b396dc2a5" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsRedirectOnSuccess_WithReturnUrl" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Post_ReturnsViewIfModelStateIsInvalid" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="0fa19168-09bb-9a28-8ba0-c05cea6a761e">
+      <Execution id="8800d7b3-5f3c-42be-858e-94b23d411c2c" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Post_ReturnsViewIfModelStateIsInvalid" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsViewIfModelStateIsInvalid" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="04de2aed-4df9-150b-e2cb-e627c5c40913">
+      <Execution id="e4413b31-dc16-469b-9174-346757111153" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsViewIfModelStateIsInvalid" />
+    </UnitTest>
+    <UnitTest name="About" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="0c7166ae-1bcd-df8f-f0e5-0887d6720437">
+      <Execution id="26f4e425-362d-4ff2-912a-2d15ced505c6" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.HomeControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="About" />
+    </UnitTest>
+    <UnitTest name="LogOn_Get_ReturnsView" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="3c8fc874-8146-46c9-28d4-8a993449df53">
+      <Execution id="a4ae1719-4729-4d0b-8902-3e71dd0aaf8b" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Get_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Get_ReturnsView" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="fb404655-4342-b813-a8a1-b56dc6597fda">
+      <Execution id="62abebd4-cc8a-4667-9eb5-93677cbca0c1" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Get_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="ChangePasswordSuccess_ReturnsView" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="0e60cf0f-b972-b097-488d-a1192155a31b">
+      <Execution id="786bf00d-fc10-48a7-92d5-a238166a50f7" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePasswordSuccess_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="Register_Get_ReturnsView" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="dc8c650f-f69c-7f6b-3eed-cbf3e69e3b38">
+      <Execution id="b3895c0c-f789-484e-b7a5-ad54047a39cb" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Get_ReturnsView" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Post_ReturnsRedirectOnSuccess" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="e5257c5e-8e60-1006-3780-c4fbd732fd3d">
+      <Execution id="2cd5b346-de60-44ca-819b-51779ec9f049" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Post_ReturnsRedirectOnSuccess" />
+    </UnitTest>
+    <UnitTest name="Register_Post_ReturnsViewIfModelStateIsInvalid" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="88036a1e-14dc-b70e-4600-97eaa384e1c5">
+      <Execution id="734e0199-c853-4e34-9d5e-1aa786068173" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsViewIfModelStateIsInvalid" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsRedirectOnSuccess_WithoutReturnUrl" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="e8380607-b3e2-bed4-2d48-233a5f1396dc">
+      <Execution id="cc091367-33f2-451a-ac3e-d03c324a4fef" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsRedirectOnSuccess_WithoutReturnUrl" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="4bdff986-f6e7-c34b-1b32-2bb5b951f9b7">
+      <Execution id="992a8d8f-749f-473f-920b-d92d65ebf40a" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.HomeControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="LogOn_Post_ReturnsViewIfValidateUserFails" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="dd1921a4-721b-3067-6670-76bfe922713a">
+      <Execution id="5bfef1f9-ffc0-4a07-88bd-a318ec609db1" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOn_Post_ReturnsViewIfValidateUserFails" />
+    </UnitTest>
+    <UnitTest name="Register_Post_ReturnsRedirectOnSuccess" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="d51516bb-d1b4-949d-a9aa-642e692146ea">
+      <Execution id="3f0f6d3a-11fa-4da3-bf27-53f45c69720c" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsRedirectOnSuccess" />
+    </UnitTest>
+    <UnitTest name="ChangePassword_Post_ReturnsViewIfChangePasswordFails" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="d3d30085-68bd-12f6-22fa-3947612c617b">
+      <Execution id="860ad43c-8c02-45f3-b915-bfab9cca5df8" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ChangePassword_Post_ReturnsViewIfChangePasswordFails" />
+    </UnitTest>
+    <UnitTest name="Register_Post_ReturnsViewIfRegistrationFails" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="2d546162-29ac-81dc-3b77-130a7e7a0d6f">
+      <Execution id="487f4ebf-7678-48e3-b93d-ef0e945f1aed" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Register_Post_ReturnsViewIfRegistrationFails" />
+    </UnitTest>
+    <UnitTest name="LogOff_LogsOutAndRedirects" storage="c:\users\roman\documents\visual studio 2010\projects\carrentaltestapp\carrentaltestapp.tests\bin\debug\carrentaltestapp.tests.dll" id="7ebb1b8c-4246-b40b-c77a-90a8a743d952">
+      <Execution id="9befaac4-65a0-49f6-acc3-0364cd6a8ea5" />
+      <TestMethod codeBase="c:/users/roman/documents/visual studio 2010/Projects/CarRentalTestApp/CarRentalTestApp.Tests/bin/Debug/CarRentalTestApp.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CarRentalTestApp.Tests.Controllers.AccountControllerTest, CarRentalTestApp.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LogOff_LogsOutAndRedirects" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="04de2aed-4df9-150b-e2cb-e627c5c40913" executionId="e4413b31-dc16-469b-9174-346757111153" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0c7166ae-1bcd-df8f-f0e5-0887d6720437" executionId="26f4e425-362d-4ff2-912a-2d15ced505c6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0e60cf0f-b972-b097-488d-a1192155a31b" executionId="786bf00d-fc10-48a7-92d5-a238166a50f7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0fa19168-09bb-9a28-8ba0-c05cea6a761e" executionId="8800d7b3-5f3c-42be-858e-94b23d411c2c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d546162-29ac-81dc-3b77-130a7e7a0d6f" executionId="487f4ebf-7678-48e3-b93d-ef0e945f1aed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c8fc874-8146-46c9-28d4-8a993449df53" executionId="a4ae1719-4729-4d0b-8902-3e71dd0aaf8b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4bdff986-f6e7-c34b-1b32-2bb5b951f9b7" executionId="992a8d8f-749f-473f-920b-d92d65ebf40a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="676b416f-92e6-bacf-18cb-a6575d9e3f24" executionId="4f7569ba-74be-4aa8-90e3-498b396dc2a5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ebb1b8c-4246-b40b-c77a-90a8a743d952" executionId="9befaac4-65a0-49f6-acc3-0364cd6a8ea5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="88036a1e-14dc-b70e-4600-97eaa384e1c5" executionId="734e0199-c853-4e34-9d5e-1aa786068173" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d3d30085-68bd-12f6-22fa-3947612c617b" executionId="860ad43c-8c02-45f3-b915-bfab9cca5df8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d51516bb-d1b4-949d-a9aa-642e692146ea" executionId="3f0f6d3a-11fa-4da3-bf27-53f45c69720c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc8c650f-f69c-7f6b-3eed-cbf3e69e3b38" executionId="b3895c0c-f789-484e-b7a5-ad54047a39cb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dd1921a4-721b-3067-6670-76bfe922713a" executionId="5bfef1f9-ffc0-4a07-88bd-a318ec609db1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e5257c5e-8e60-1006-3780-c4fbd732fd3d" executionId="2cd5b346-de60-44ca-819b-51779ec9f049" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e8380607-b3e2-bed4-2d48-233a5f1396dc" executionId="cc091367-33f2-451a-ac3e-d03c324a4fef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb404655-4342-b813-a8a1-b56dc6597fda" executionId="62abebd4-cc8a-4667-9eb5-93677cbca0c1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e4413b31-dc16-469b-9174-346757111153" testId="04de2aed-4df9-150b-e2cb-e627c5c40913" testName="LogOn_Post_ReturnsViewIfModelStateIsInvalid" computerName="WIN-KLV7HCI6751" duration="00:00:00.2707592" startTime="2012-09-12T14:47:06.4778266+10:00" endTime="2012-09-12T14:47:08.5669461+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e4413b31-dc16-469b-9174-346757111153">
+    </UnitTestResult>
+    <UnitTestResult executionId="26f4e425-362d-4ff2-912a-2d15ced505c6" testId="0c7166ae-1bcd-df8f-f0e5-0887d6720437" testName="About" computerName="WIN-KLV7HCI6751" duration="00:00:00.0008356" startTime="2012-09-12T14:47:08.6289496+10:00" endTime="2012-09-12T14:47:08.7759580+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="26f4e425-362d-4ff2-912a-2d15ced505c6">
+    </UnitTestResult>
+    <UnitTestResult executionId="786bf00d-fc10-48a7-92d5-a238166a50f7" testId="0e60cf0f-b972-b097-488d-a1192155a31b" testName="ChangePasswordSuccess_ReturnsView" computerName="WIN-KLV7HCI6751" duration="00:00:00.0004790" startTime="2012-09-12T14:47:08.8269610+10:00" endTime="2012-09-12T14:47:08.8439619+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="786bf00d-fc10-48a7-92d5-a238166a50f7">
+    </UnitTestResult>
+    <UnitTestResult executionId="8800d7b3-5f3c-42be-858e-94b23d411c2c" testId="0fa19168-09bb-9a28-8ba0-c05cea6a761e" testName="ChangePassword_Post_ReturnsViewIfModelStateIsInvalid" computerName="WIN-KLV7HCI6751" duration="00:00:00.0031782" startTime="2012-09-12T14:47:08.8539625+10:00" endTime="2012-09-12T14:47:08.8799640+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8800d7b3-5f3c-42be-858e-94b23d411c2c">
+    </UnitTestResult>
+    <UnitTestResult executionId="487f4ebf-7678-48e3-b93d-ef0e945f1aed" testId="2d546162-29ac-81dc-3b77-130a7e7a0d6f" testName="Register_Post_ReturnsViewIfRegistrationFails" computerName="WIN-KLV7HCI6751" duration="00:00:00.0038664" startTime="2012-09-12T14:47:08.9039654+10:00" endTime="2012-09-12T14:47:08.9429676+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="487f4ebf-7678-48e3-b93d-ef0e945f1aed">
+    </UnitTestResult>
+    <UnitTestResult executionId="a4ae1719-4729-4d0b-8902-3e71dd0aaf8b" testId="3c8fc874-8146-46c9-28d4-8a993449df53" testName="LogOn_Get_ReturnsView" computerName="WIN-KLV7HCI6751" duration="00:00:00.0005083" startTime="2012-09-12T14:47:08.9529682+10:00" endTime="2012-09-12T14:47:08.9859701+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a4ae1719-4729-4d0b-8902-3e71dd0aaf8b">
+    </UnitTestResult>
+    <UnitTestResult executionId="992a8d8f-749f-473f-920b-d92d65ebf40a" testId="4bdff986-f6e7-c34b-1b32-2bb5b951f9b7" testName="Index" computerName="WIN-KLV7HCI6751" duration="00:00:00.0004853" startTime="2012-09-12T14:47:08.9949706+10:00" endTime="2012-09-12T14:47:09.0129716+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="992a8d8f-749f-473f-920b-d92d65ebf40a">
+    </UnitTestResult>
+    <UnitTestResult executionId="4f7569ba-74be-4aa8-90e3-498b396dc2a5" testId="676b416f-92e6-bacf-18cb-a6575d9e3f24" testName="LogOn_Post_ReturnsRedirectOnSuccess_WithReturnUrl" computerName="WIN-KLV7HCI6751" duration="00:00:00.0026079" startTime="2012-09-12T14:47:09.0199720+10:00" endTime="2012-09-12T14:47:09.0579742+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f7569ba-74be-4aa8-90e3-498b396dc2a5">
+    </UnitTestResult>
+    <UnitTestResult executionId="9befaac4-65a0-49f6-acc3-0364cd6a8ea5" testId="7ebb1b8c-4246-b40b-c77a-90a8a743d952" testName="LogOff_LogsOutAndRedirects" computerName="WIN-KLV7HCI6751" duration="00:00:00.0034178" startTime="2012-09-12T14:47:09.0649746+10:00" endTime="2012-09-12T14:47:09.0839757+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9befaac4-65a0-49f6-acc3-0364cd6a8ea5">
+    </UnitTestResult>
+    <UnitTestResult executionId="734e0199-c853-4e34-9d5e-1aa786068173" testId="88036a1e-14dc-b70e-4600-97eaa384e1c5" testName="Register_Post_ReturnsViewIfModelStateIsInvalid" computerName="WIN-KLV7HCI6751" duration="00:00:00.0005495" startTime="2012-09-12T14:47:09.0899760+10:00" endTime="2012-09-12T14:47:09.1029768+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="734e0199-c853-4e34-9d5e-1aa786068173">
+    </UnitTestResult>
+    <UnitTestResult executionId="860ad43c-8c02-45f3-b915-bfab9cca5df8" testId="d3d30085-68bd-12f6-22fa-3947612c617b" testName="ChangePassword_Post_ReturnsViewIfChangePasswordFails" computerName="WIN-KLV7HCI6751" duration="00:00:00.0554922" startTime="2012-09-12T14:47:09.1089771+10:00" endTime="2012-09-12T14:47:09.1759809+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="860ad43c-8c02-45f3-b915-bfab9cca5df8">
+    </UnitTestResult>
+    <UnitTestResult executionId="3f0f6d3a-11fa-4da3-bf27-53f45c69720c" testId="d51516bb-d1b4-949d-a9aa-642e692146ea" testName="Register_Post_ReturnsRedirectOnSuccess" computerName="WIN-KLV7HCI6751" duration="00:00:00.0006801" startTime="2012-09-12T14:47:09.1839814+10:00" endTime="2012-09-12T14:47:09.1989822+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3f0f6d3a-11fa-4da3-bf27-53f45c69720c">
+    </UnitTestResult>
+    <UnitTestResult executionId="b3895c0c-f789-484e-b7a5-ad54047a39cb" testId="dc8c650f-f69c-7f6b-3eed-cbf3e69e3b38" testName="Register_Get_ReturnsView" computerName="WIN-KLV7HCI6751" duration="00:00:00.0007615" startTime="2012-09-12T14:47:09.2049826+10:00" endTime="2012-09-12T14:47:09.2179833+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3895c0c-f789-484e-b7a5-ad54047a39cb">
+    </UnitTestResult>
+    <UnitTestResult executionId="5bfef1f9-ffc0-4a07-88bd-a318ec609db1" testId="dd1921a4-721b-3067-6670-76bfe922713a" testName="LogOn_Post_ReturnsViewIfValidateUserFails" computerName="WIN-KLV7HCI6751" duration="00:00:00.0006796" startTime="2012-09-12T14:47:09.2229836+10:00" endTime="2012-09-12T14:47:09.2349843+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5bfef1f9-ffc0-4a07-88bd-a318ec609db1">
+    </UnitTestResult>
+    <UnitTestResult executionId="2cd5b346-de60-44ca-819b-51779ec9f049" testId="e5257c5e-8e60-1006-3780-c4fbd732fd3d" testName="ChangePassword_Post_ReturnsRedirectOnSuccess" computerName="WIN-KLV7HCI6751" duration="00:00:00.0006050" startTime="2012-09-12T14:47:09.2409846+10:00" endTime="2012-09-12T14:47:09.2539854+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2cd5b346-de60-44ca-819b-51779ec9f049">
+    </UnitTestResult>
+    <UnitTestResult executionId="cc091367-33f2-451a-ac3e-d03c324a4fef" testId="e8380607-b3e2-bed4-2d48-233a5f1396dc" testName="LogOn_Post_ReturnsRedirectOnSuccess_WithoutReturnUrl" computerName="WIN-KLV7HCI6751" duration="00:00:00.0004508" startTime="2012-09-12T14:47:09.2609858+10:00" endTime="2012-09-12T14:47:09.2699863+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cc091367-33f2-451a-ac3e-d03c324a4fef">
+    </UnitTestResult>
+    <UnitTestResult executionId="62abebd4-cc8a-4667-9eb5-93677cbca0c1" testId="fb404655-4342-b813-a8a1-b56dc6597fda" testName="ChangePassword_Get_ReturnsView" computerName="WIN-KLV7HCI6751" duration="00:00:00.0005236" startTime="2012-09-12T14:47:09.2779868+10:00" endTime="2012-09-12T14:47:09.2889874+10:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62abebd4-cc8a-4667-9eb5-93677cbca0c1">
+    </UnitTestResult>
+  </Results>
+</TestRun>

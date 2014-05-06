@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prac1WebService", "Prac1WebService\Prac1WebService.csproj", "{EFFE3F9A-0999-4FC0-9199-E5E62F77B279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P1WebApplication", "P1WebApplication\P1WebApplication.csproj", "{1E12747C-9932-47E1-8CEE-B7A88886AB39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFFE3F9A-0999-4FC0-9199-E5E62F77B279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFFE3F9A-0999-4FC0-9199-E5E62F77B279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFFE3F9A-0999-4FC0-9199-E5E62F77B279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFFE3F9A-0999-4FC0-9199-E5E62F77B279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E12747C-9932-47E1-8CEE-B7A88886AB39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E12747C-9932-47E1-8CEE-B7A88886AB39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E12747C-9932-47E1-8CEE-B7A88886AB39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E12747C-9932-47E1-8CEE-B7A88886AB39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

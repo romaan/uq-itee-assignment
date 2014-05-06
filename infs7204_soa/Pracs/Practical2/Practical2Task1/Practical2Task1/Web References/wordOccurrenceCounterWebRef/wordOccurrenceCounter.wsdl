@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Counting particular word occurences</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="wordOccurenceCounter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="word" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wordOccurenceCounterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wordOccurenceCounterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="wordOccurenceCounterSoapIn">
+    <wsdl:part name="parameters" element="tns:wordOccurenceCounter" />
+  </wsdl:message>
+  <wsdl:message name="wordOccurenceCounterSoapOut">
+    <wsdl:part name="parameters" element="tns:wordOccurenceCounterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WordOccurenceSoap">
+    <wsdl:operation name="wordOccurenceCounter">
+      <wsdl:input message="tns:wordOccurenceCounterSoapIn" />
+      <wsdl:output message="tns:wordOccurenceCounterSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WordOccurenceSoap" type="tns:WordOccurenceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wordOccurenceCounter">
+      <soap:operation soapAction="http://tempuri.org/wordOccurenceCounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WordOccurenceSoap12" type="tns:WordOccurenceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="wordOccurenceCounter">
+      <soap12:operation soapAction="http://tempuri.org/wordOccurenceCounter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WordOccurence">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Counting particular word occurences</wsdl:documentation>
+    <wsdl:port name="WordOccurenceSoap" binding="tns:WordOccurenceSoap">
+      <soap:address location="http://localhost:49860/wordOccurrenceCounter.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WordOccurenceSoap12" binding="tns:WordOccurenceSoap12">
+      <soap12:address location="http://localhost:49860/wordOccurrenceCounter.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

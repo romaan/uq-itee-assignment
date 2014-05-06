@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IsValid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="st" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsValidSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValid" />
+  </wsdl:message>
+  <wsdl:message name="IsValidSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AreaCodeValidatorWebServiceSoap">
+    <wsdl:operation name="IsValid">
+      <wsdl:input message="tns:IsValidSoapIn" />
+      <wsdl:output message="tns:IsValidSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AreaCodeValidatorWebServiceSoap" type="tns:AreaCodeValidatorWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsValid">
+      <soap:operation soapAction="http://tempuri.org/IsValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AreaCodeValidatorWebServiceSoap12" type="tns:AreaCodeValidatorWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsValid">
+      <soap12:operation soapAction="http://tempuri.org/IsValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AreaCodeValidatorWebService">
+    <wsdl:port name="AreaCodeValidatorWebServiceSoap" binding="tns:AreaCodeValidatorWebServiceSoap">
+      <soap:address location="http://localhost:50045/AreaCodeValidatorWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AreaCodeValidatorWebServiceSoap12" binding="tns:AreaCodeValidatorWebServiceSoap12">
+      <soap12:address location="http://localhost:50045/AreaCodeValidatorWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

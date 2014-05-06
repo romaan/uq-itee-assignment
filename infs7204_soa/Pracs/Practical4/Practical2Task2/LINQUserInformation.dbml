@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Contacts" Class="LINQUserInformationDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Contacts.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ContactsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.LoginInformation" Member="LoginInformations">
+    <Type Name="LoginInformation">
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="LoginInformation_LoginInformation" Member="LoginInformation2" ThisKey="ID" OtherKey="ID" Type="LoginInformation" Cardinality="One" />
+      <Association Name="LoginInformation_LoginInformation" Member="LoginInformation1" ThisKey="ID" OtherKey="ID" Type="LoginInformation" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

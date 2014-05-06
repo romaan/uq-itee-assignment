@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Practical1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Practical1_Time_CurrentTimeService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:49273/CurrentTimeService.asmx</Value>
+    </Setting>
+    <Setting Name="Practical1_Age_CalculateAgeService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:49273/CalculateAgeService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,8 @@
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical3\Practical2Task2\bin\Practical2Task2.dll
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical3\Practical2Task2\bin\Practical2Task2.pdb
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical3\Practical2Task2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical3\Practical2Task2\obj\Debug\Practical2Task2.Properties.Resources.resources
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical3\Practical2Task2\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical3\Practical2Task2\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical3\Practical2Task2\obj\Debug\Practical2Task2.dll
+C:\Users\Roman\Documents\Visual Studio 2010\Projects\Practical3\Practical2Task2\obj\Debug\Practical2Task2.pdb

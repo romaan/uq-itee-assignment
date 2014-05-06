@@ -1,0 +1,30 @@
+﻿@model ToDoListApp.Models.RKSurvey
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>RKSurvey</legend>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">apple</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.apple)
+    </div>
+
+    <div class="display-label">mango</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.mango)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

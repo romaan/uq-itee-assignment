@@ -1,0 +1,55 @@
+create database if not exists prac7;
+
+use prac7;
+
+
+create table if not exists images(image_id int auto_increment primary key,
+		image_name varchar(32) not null,
+		image_path varchar(32) not null);
+
+create table if not exists image_tag(img_id int references images(image_id),
+			tag_id int references tags(tag_id),
+			image_tag_time timestamp,
+			primary key(img_id, tag_id, image_tag_time));
+
+
+create table if not exists tags(tag_id int auto_increment primary key,
+		tag_text varchar(64));
+
+
+
+create table if not exists album(album_id int, 
+		tag_id int references tags(tag_id));
+
+
+
+
+insert into images(image_id, image_name, image_path)
+		values(1,'1.jpeg','./images/');
+
+insert into images(image_id, image_name, image_path)
+		values(2,'2.jpeg','./images/');
+
+insert into images(image_id, image_name, image_path)
+		values(3,'3.jpeg','./images/');
+
+insert into images(image_id, image_name, image_path)
+		values(4,'4.jpeg','./images/');
+
+insert into images(image_id, image_name, image_path)
+		values(5,'5.jpeg','./images/');
+
+insert into images(image_id, image_name, image_path)
+		values(6,'6.jpeg','./images/');
+
+insert into images(image_id, image_name, image_path)
+		values(7,'7.jpeg','./images/');
+
+insert into images(image_id, image_name, image_path)
+		values(8,'8.jpeg','./images/');
+
+insert into images(image_id, image_name, image_path)
+		values(9,'9.jpeg','./images/');
+
+insert into images(image_id, image_name, image_path)
+		values(10,'10.jpeg','./images/');

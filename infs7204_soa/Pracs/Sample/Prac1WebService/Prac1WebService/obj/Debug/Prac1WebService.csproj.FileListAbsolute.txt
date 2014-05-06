@@ -1,0 +1,5 @@
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1WebService\Prac1WebService\bin\Prac1WebService.dll
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1WebService\Prac1WebService\bin\Prac1WebService.pdb
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1WebService\Prac1WebService\obj\Debug\Prac1WebService.dll
+c:\users\shahrzad\documents\visual studio 2010\Projects\Prac1WebService\Prac1WebService\obj\Debug\Prac1WebService.pdb
+C:\Users\Shahrzad\documents\visual studio 2010\Projects\Prac1WebService\Prac1WebService\obj\Debug\Prac1WebService.csprojResolveAssemblyReference.cache

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LSQL">
+  <DataContextMoniker Name="/LSQLDataContext" />
+  <nestedChildShapes>
+    <classShape Id="fd95d174-a020-44a0-abac-816c4d9c8132" absoluteBounds="0.5, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/LSQLDataContext/Booking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e118df3c-7fb4-4e5b-9ba5-d345ac8a248e" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0a8bef49-f967-45b1-b128-83b4b6f5628a" absoluteBounds="3.875, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LSQLDataContext/BookingStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e11a3712-b472-460c-93d6-ce8f95f5d7ba" absoluteBounds="3.8899999999999997, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.875 : 1.09699625651042); (2.5 : 1.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LSQLDataContext/BookingStatus/BookingStatus_Booking" />
+      <nodes>
+        <classShapeMoniker Id="0a8bef49-f967-45b1-b128-83b4b6f5628a" />
+        <classShapeMoniker Id="fd95d174-a020-44a0-abac-816c4d9c8132" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="909618a2-07bc-4323-ab95-4e9e5ead78d6" absoluteBounds="3.75, 2, 2, 2.5401025390625">
+      <DataClassMoniker Name="/LSQLDataContext/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af954e83-88c9-448e-bce4-f54a9f47d586" absoluteBounds="3.7649999999999997, 2.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 2.42390055338542); (2.5 : 2.42390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LSQLDataContext/Customer/Customer_Booking" />
+      <nodes>
+        <classShapeMoniker Id="909618a2-07bc-4323-ab95-4e9e5ead78d6" />
+        <classShapeMoniker Id="fd95d174-a020-44a0-abac-816c4d9c8132" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="22e92bf4-98cc-4cc5-8dad-915248c4b45c" absoluteBounds="6.375, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LSQLDataContext/Manufacturer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="01d2612c-e98e-4f9e-922c-7195abaa9cfb" absoluteBounds="6.3900000000000006, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e36ae73-c82f-4252-af7e-66f845c61d43" absoluteBounds="6.125, 2.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LSQLDataContext/Model" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ddc8f0e-677d-40cd-801d-f83ce5f19a91" absoluteBounds="6.1400000000000006, 2.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e73bf702-2079-479d-8483-e3573ee954b3" absoluteBounds="0.625, 3.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/LSQLDataContext/Vehicle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="522c1be9-8470-4e5f-8f50-adce3423561b" absoluteBounds="0.64, 4.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.15625 : 3.875); (1.15625 : 2.84780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LSQLDataContext/Vehicle/Vehicle_Booking" />
+      <nodes>
+        <classShapeMoniker Id="e73bf702-2079-479d-8483-e3573ee954b3" />
+        <classShapeMoniker Id="fd95d174-a020-44a0-abac-816c4d9c8132" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.28125 : 1.69399251302083); (8.28125 : 6.21079752604167); (2.625 : 6.21079752604167)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LSQLDataContext/Manufacturer/Manufacturer_Vehicle" />
+      <nodes>
+        <classShapeMoniker Id="22e92bf4-98cc-4cc5-8dad-915248c4b45c" />
+        <classShapeMoniker Id="e73bf702-2079-479d-8483-e3573ee954b3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 4.27089680989583); (7.125 : 6.07739251953125); (2.625 : 6.07739251953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LSQLDataContext/Model/Model_Vehicle" />
+      <nodes>
+        <classShapeMoniker Id="9e36ae73-c82f-4252-af7e-66f845c61d43" />
+        <classShapeMoniker Id="e73bf702-2079-479d-8483-e3573ee954b3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9d529dda-7bba-4e6a-bcc9-a369c09b97cb" absoluteBounds="3.875, 4.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LSQLDataContext/VehicleCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be4821cd-959b-4e2d-94fb-becb092a71b0" absoluteBounds="3.8900000000000006, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.875 : 5.34699625651042); (2.625 : 5.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LSQLDataContext/VehicleCategory/VehicleCategory_Vehicle" />
+      <nodes>
+        <classShapeMoniker Id="9d529dda-7bba-4e6a-bcc9-a369c09b97cb" />
+        <classShapeMoniker Id="e73bf702-2079-479d-8483-e3573ee954b3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

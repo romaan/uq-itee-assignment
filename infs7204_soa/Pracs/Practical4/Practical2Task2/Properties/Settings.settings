@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Phonebook.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Phonebook" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50624/PhoneService.asmx</Value>
+    </Setting>
+    <Setting Name="Practical2Task2_ValidityAreaCodeWebRef_AreaCodeValidity" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50624/ValidityAreaCode.asmx</Value>
+    </Setting>
+    <Setting Name="Phonebook_LINQDatabaseServiceWebRef_LINQDatabaseService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50624/LINQDatabaseService.asmx</Value>
+    </Setting>
+    <Setting Name="Phonebook_UserAccountServiceWebRef_UserAccount" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50624/UserAccountService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

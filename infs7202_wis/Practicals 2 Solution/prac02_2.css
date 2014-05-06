@@ -1,0 +1,20 @@
+h1
+{
+text-align:center;
+}
+
+#all
+{
+float:left; 
+width:55%;
+ height:700px; 
+ border-style:dashed; 
+}
+
+#selected
+{
+float:right; 
+width:40%; 
+height:700px; 
+border-style:dashed;
+}

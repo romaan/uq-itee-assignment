@@ -1,0 +1,5 @@
+c:\users\roman\documents\visual studio 2010\Projects\Practical2Task1\Practical2Task1\bin\Practical2Task1.dll
+c:\users\roman\documents\visual studio 2010\Projects\Practical2Task1\Practical2Task1\bin\Practical2Task1.pdb
+c:\users\roman\documents\visual studio 2010\Projects\Practical2Task1\Practical2Task1\obj\Debug\ResolveAssemblyReference.cache
+c:\users\roman\documents\visual studio 2010\Projects\Practical2Task1\Practical2Task1\obj\Debug\Practical2Task1.dll
+c:\users\roman\documents\visual studio 2010\Projects\Practical2Task1\Practical2Task1\obj\Debug\Practical2Task1.pdb

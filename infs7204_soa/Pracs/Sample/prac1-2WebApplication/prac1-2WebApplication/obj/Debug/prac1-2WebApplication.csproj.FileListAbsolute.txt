@@ -1,0 +1,5 @@
+c:\users\shahrzad\documents\visual studio 2010\Projects\prac1-2WebApplication\prac1-2WebApplication\bin\prac1-2WebApplication.dll
+c:\users\shahrzad\documents\visual studio 2010\Projects\prac1-2WebApplication\prac1-2WebApplication\bin\prac1-2WebApplication.pdb
+c:\users\shahrzad\documents\visual studio 2010\Projects\prac1-2WebApplication\prac1-2WebApplication\obj\Debug\prac1-2WebApplication.dll
+c:\users\shahrzad\documents\visual studio 2010\Projects\prac1-2WebApplication\prac1-2WebApplication\obj\Debug\prac1-2WebApplication.pdb
+C:\Users\Shahrzad\Documents\Visual Studio 2010\Projects\prac1-2WebApplication\prac1-2WebApplication\obj\Debug\prac1-2WebApplication.csprojResolveAssemblyReference.cache

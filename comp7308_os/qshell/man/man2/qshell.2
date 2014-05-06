@@ -1,0 +1,95 @@
+.\" Man pages for QShell 
+.\" By Romaan Khadeer Ahmed
+.\"
+.TH QSHELL 2 2013-07-30 "QShell" "A Simple Shell"
+.SH NAME
+qshell \- Custom shell for COMP7308, UQ, 2013
+.SH SYNOPSIS
+.LP
+.B qshell [input_script]
+.LP
+.B command [arg1 arg2 ... ] [< input_file] [> output_file] [&] 
+.LP
+.B command [arg1 arg2 ... ] [> output_file] [< input_file] [&]
+.LP
+.B command [arg1 arg2 ... ] [< input_file] | command [arg1 arg2 ...] [> output_file]
+
+.SH DESCRIPTION
+This manual page explains the
+.B "qshell"
+implementation, its functionality and limitations. qShell is built using C programming language. It accepts the command, passes it to the parser function to analyze the user-input and executes the command with creating new child processes. Also, it manages the input and output to a command using redirection and pipe operators.
+.BR 
+.PP
+.SS Features implemented
+The qshell supports the following:
+.TP 
+| The output of first command can be redirected to other
+.TP
+> The output of a command can be redirected to a file
+.TP
+< The input for a command can be redirected from a file
+.SS Other Features implemented
+The qshell also supports the follwing:
+.TP
+A foreground command can be interrupted using Ctrl + C
+.TP
+A background process ID is printed when a command is executed in background
+.TP
+A background process ID and its exit status is printed when it terminates
+.TP
+Ctrl + C does not affect the execution of background tasks
+
+.SH ENVIRONMENT
+The qshell environment is created by compiling the source code using make and then invoking the qshell. To exit the qshell environment, type exit command. The Ctrl + C interrupt breaks the execution of foreground command. Background processes can be executed using ampersand symbol at the end of the command
+.SH FILES
+The source code files of qshell are:
+.P
+.I
+command.h
+.br 
+Contains the necessary data structure for qshell
+.P
+.I
+initialize.c
+.br
+Initialized the qshell
+.P
+.I
+parse.c 
+.br
+Parses the input text, breaks in token
+.I
+execute.c 
+.br
+Accepts the token and executes the commands
+.P
+.I
+qshell.c 
+.br
+Entry point main function of the qshell
+
+.SH NOTES
+The program is tested using filetest, longtest and a few other commands manually and the program executes in accordance with requirements.
+
+.SH BUGS
+The man pages cannot be invoked just by the command
+.LP
+.B man qshell
+.LP 
+This is because the qshell is not added to MANPATH or copied to path where man pages are search due to lack of user permission. The workaround is to run qshellman1.sh and qshellman8.sh to run the man pages.
+
+
+.SH EXAMPLE
+The below command can be used for testing:
+.LP
+qshell filetest
+.LP
+The script files test1.sh, test2.sh containts test data
+
+.SH SEE ALSO
+.BR bash (1),
+.BR sh (1)
+.SH AUTHOR
+Romaan
+.BR
+romaan.ahmed@uqconnect.edu.au6

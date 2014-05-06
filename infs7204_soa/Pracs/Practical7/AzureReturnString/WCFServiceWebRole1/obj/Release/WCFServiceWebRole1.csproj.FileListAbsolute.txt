@@ -1,0 +1,9 @@
+c:\users\roman\documents\visual studio 2010\Projects\AzureReturnString\WCFServiceWebRole1\bin\WCFServiceWebRole1.dll
+c:\users\roman\documents\visual studio 2010\Projects\AzureReturnString\WCFServiceWebRole1\bin\WCFServiceWebRole1.pdb
+c:\users\roman\documents\visual studio 2010\Projects\AzureReturnString\WCFServiceWebRole1\bin\Microsoft.WindowsAzure.Configuration.dll
+c:\users\roman\documents\visual studio 2010\Projects\AzureReturnString\WCFServiceWebRole1\bin\Microsoft.WindowsAzure.Diagnostics.dll
+c:\users\roman\documents\visual studio 2010\Projects\AzureReturnString\WCFServiceWebRole1\bin\Microsoft.WindowsAzure.StorageClient.dll
+c:\users\roman\documents\visual studio 2010\Projects\AzureReturnString\WCFServiceWebRole1\bin\Microsoft.WindowsAzure.Diagnostics.xml
+c:\users\roman\documents\visual studio 2010\Projects\AzureReturnString\WCFServiceWebRole1\obj\Release\WCFServiceWebRole1.csprojResolveAssemblyReference.cache
+c:\users\roman\documents\visual studio 2010\Projects\AzureReturnString\WCFServiceWebRole1\obj\Release\WCFServiceWebRole1.dll
+c:\users\roman\documents\visual studio 2010\Projects\AzureReturnString\WCFServiceWebRole1\obj\Release\WCFServiceWebRole1.pdb
