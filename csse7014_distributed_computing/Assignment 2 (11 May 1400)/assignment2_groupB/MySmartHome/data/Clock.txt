@@ -1,0 +1,7 @@
+Tuesday,20
+Tuesday,25
+Wednesday,15
+Thursday,15
+Friday,30
+Saturday,10
+Sunday,620

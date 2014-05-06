@@ -1,0 +1,13 @@
+
+final public class BPHeartRateSensor extends FileIceOperation {
+	
+	protected BPHeartRateSensor(String file) throws Exception {
+		super(file);
+	}
+
+	@Override
+	public int run(String[] args) {
+		return 0;
+	}
+
+}

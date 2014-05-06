@@ -1,0 +1,30 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * 
+ */
+
+/**
+ * @author Administrator
+ *
+ */
+public class SingleUserTest {
+
+	/**
+	 * Test method for {@link Sensor#main(java.lang.String[])}.
+	 */
+	@Test
+	public void testMain() {
+		String[] arguments = {"Temperature",".//src//datafile//Temperature.txt"};
+	    assetResults(Sensor.main(arguments) == 1);
+		
+	}
+
+	private void asset(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

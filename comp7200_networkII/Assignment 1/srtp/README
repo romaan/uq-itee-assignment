@@ -1,0 +1,45 @@
+-----------------------------------------------------------------------
+COMS7200 - Assignment 1 - A Simple Reliable Transport Protocol and File Transfer Application : By Gayatri, Ksenia, Rojesh and Romaan
+-----------------------------------------------------------------------
+The ROOT of this folder contains the following directories:
+1. client - consists of all source code related to ftclient 
+2. server - consists of all source code related to ftserver
+3. docs - all the documentation, snapshots, test files used to test the program
+4. makefile - script to run make
+5. README - this file itself
+------------------------------------------------------------------------
+To compile the program change the directory to the ROOT directory (we define ROOT
+directory as the directory containing our client, server and docs directory) and execute the
+below command:
+
+make
+
+This generates two binary executables:
+1. ftclient (in client directory)
+2. ftserver (in server directory)
+--------------------------------------------------------------------------
+In order to run the program, open two or more terminals:
+
+Terminal 1: 
+	change directory to server
+	start the server using the below command
+	
+	./ftserver [-d] <port>
+
+Terminal 2 or more:
+	change directory to client
+	execute the client using below command
+	
+	./ftclient [-d] <server> <port> <filename>
+
+----------------------------------------------------------------------------
+More on BUILD:
+ Execute "make dist" from ROOT directory to clean and package. A archive is created in
+ the parent folder of ROOT.
+
+ Execute "make clean" from ROOT directory to clean. This cleans all the files except .c and .h
+in server and client directories.
+----------------------------------------------------------------------------
+ALSO SEE:
+
+ Docs folder contains the implementation report, test file that can be used to test the data transfer and the snapshots.

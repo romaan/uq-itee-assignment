@@ -1,0 +1,7 @@
+module exchange {
+
+	interface TemperatureHomemanager {
+
+	}
+
+}

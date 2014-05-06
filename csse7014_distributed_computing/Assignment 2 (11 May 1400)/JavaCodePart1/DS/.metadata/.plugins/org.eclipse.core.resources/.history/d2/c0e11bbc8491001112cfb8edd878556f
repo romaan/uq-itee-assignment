@@ -1,0 +1,11 @@
+import java.io.RandomAccessFile;
+
+
+abstract public class FileOperation extends Ice.Application {
+
+private RandomAccessFile filePointer;
+
+	protected FileOperation(String file) throws Exception {
+		filePointer = new RandomAccessFile(file,"r");
+	}
+}

@@ -1,0 +1,32 @@
+import java.io.FileNotFoundException;
+
+
+public class Sensor {
+
+	public Sensor(String type, String predefinedDataFile) throws Exception {
+		switch (type) {
+		case "temperature": new TemperatureSensor(predefinedDataFile); break;
+		case "BP": new BPHeartRateSensor(predefinedDataFile); break;
+		default: System.out.println("Invalid [type] : type -> temperature | BP");
+				break;
+		}
+	}
+
+	public static void main(String[] args) {
+		if (args.length != 2 ) {
+			System.out.println("Syntax: java Sensor [type] [predefined-data-file]");
+			System.exit(0);
+			}
+			try	{
+			/*Testing purpose statement start*/
+			 args[0] = "temperature";
+			 args[1] = ".\\datafile\\Temperature.txt";
+			/*Testing purpose statement end*/
+				new Sensor(args[0],args[1]);	
+			} catch (FileNotFoundException ex) { 
+			System.out.println("File Not Found: "+ex.getMessage());
+			}catch (Exception ex) {
+			ex.printStackTrace();
+			}
+	}
+}

@@ -1,0 +1,8 @@
+
+abstract public class FileOperation extends Ice.Application {
+
+private RandomAccessFile filePointer;
+	public FileOperation(String file) {
+		
+	}
+}

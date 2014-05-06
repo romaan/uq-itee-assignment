@@ -1,0 +1,24 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * 
+ */
+
+/**
+ * @author Administrator
+ *
+ */
+public class SingleUserTest {
+
+	/**
+	 * Test method for {@link Sensor#main(java.lang.String[])}.
+	 */
+	@Test
+	public void testMain() {
+	    Sensor.main("Temperature",".//src//datafile//Temperature.txt");
+		fail("Not yet implemented"); // TODO
+	}
+
+}

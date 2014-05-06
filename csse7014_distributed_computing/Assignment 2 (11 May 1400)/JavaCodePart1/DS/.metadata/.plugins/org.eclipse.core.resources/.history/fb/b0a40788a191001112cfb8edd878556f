@@ -1,0 +1,7 @@
+module exchange {
+
+	interface SensorHomemanager {
+		void temperatureData(Integer temperature);
+	};
+
+};

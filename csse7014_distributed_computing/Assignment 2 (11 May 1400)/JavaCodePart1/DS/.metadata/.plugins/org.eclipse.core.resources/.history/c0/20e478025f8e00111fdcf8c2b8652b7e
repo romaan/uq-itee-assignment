@@ -1,0 +1,20 @@
+import Demo.HelloPrx;
+import Demo.HelloPrxHelper;
+
+
+public class Client extends Ice.Application {
+
+		public static void main(String[] args) {
+			Client s = new Client();
+			int status = s.main("Client", args);
+			System.exit(status);
+		}
+
+		@Override
+		public int run(String[] args) {
+			Ice.ObjectPrx obj = communicator().stringToProxy("hello:tcp -h 127.0.0.1 -p 10000");
+			HelloPrx hello = HelloPrxHelper.uncheckedCast(obj);
+			hello.sayHello();
+			return 0;
+		}
+}

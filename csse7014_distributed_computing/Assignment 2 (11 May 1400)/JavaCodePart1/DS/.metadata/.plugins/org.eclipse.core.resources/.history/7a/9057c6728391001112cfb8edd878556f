@@ -1,0 +1,14 @@
+
+final public class BPHeartRateSensor extends FileOperation {
+	
+	protected BPHeartRateSensor(String file) throws Exception {
+		super(file);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public int run(String[] args) {
+		return 0;
+	}
+
+}

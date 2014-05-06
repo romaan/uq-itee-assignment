@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="Ice._ObjectAdapterOperationsNC"/>
+<fullyQualifiedTypeName name="Ice.Current"/>
+<fullyQualifiedTypeName name="Demo._HelloDisp"/>
+<fullyQualifiedTypeName name="Ice.ObjectPrx"/>
+<fullyQualifiedTypeName name="Demo.HelloPrx"/>
+<fullyQualifiedTypeName name="Demo.HelloPrxHelper"/>
+<fullyQualifiedTypeName name="Demo.ClockPrxHelper"/>
+<fullyQualifiedTypeName name="Demo.ClockPrx"/>
+<fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="exchange.SensorHomemanagerPrxHelper"/>
+<fullyQualifiedTypeName name="exchange.SensorHomemanagerPrx"/>
+<fullyQualifiedTypeName name="exchange._SensorHomemanagerDisp"/>
+<fullyQualifiedTypeName name="exchange._BpheartrateHomemanagerDisp"/>
+<fullyQualifiedTypeName name="exchange.TemperatureHomemanagerPrx"/>
+<fullyQualifiedTypeName name="exchange.TemperatureHomemanagerPrxHelper"/>
+<fullyQualifiedTypeName name="exchange._TemperatureHomemanagerDisp"/>
+<fullyQualifiedTypeName name="exchange.BpheartrateHomemanagerPrxHelper"/>
+<fullyQualifiedTypeName name="exchange.BpheartrateHomemanagerPrx"/>
+<fullyQualifiedTypeName name="exchange._UIHomemanagerDisp"/>
+<fullyQualifiedTypeName name="Ice.Application"/>
+<fullyQualifiedTypeName name="exchange.UIHomemanagerPrxHelper"/>
+<fullyQualifiedTypeName name="exchange.UIHomemanagerPrx"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+</qualifiedTypeNameHistroy>

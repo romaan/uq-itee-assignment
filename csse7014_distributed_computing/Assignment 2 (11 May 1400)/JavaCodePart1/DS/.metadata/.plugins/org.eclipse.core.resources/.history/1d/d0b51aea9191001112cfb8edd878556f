@@ -1,0 +1,73 @@
+import exchange.TemperatureHomemanagerPrx;
+import exchange.TemperatureHomemanagerPrxHelper;
+import java.lang.InterruptedException;
+
+
+final public class TemperatureSensor extends FileOperation {
+
+	public TemperatureSensor(String file) throws Exception {
+		super(file);
+	}
+	
+	public int run(String[] args) {
+	        String topicName = "TemperatureSensorData";
+	        IceStorm.TopicPrx topic = iceSetup(topicName);
+	        
+
+	        //
+	        // Get the topic's publisher object, and create a Clock proxy with
+	        // the mode specified as an argument of this application.
+	        //
+	        Ice.ObjectPrx publisher = topic.getPublisher();
+	
+	        publisher = publisher.ice_oneway();
+	        
+	        TemperatureHomemanagerPrx aTemperatureHomemanager = TemperatureHomemanagerPrxHelper.uncheckedCast(publisher);
+	        try
+	        {
+	            while(true)
+	            {
+	                
+	            	aTemperatureHomemanager.temperatureData(getLine());
+
+	                    Thread.currentThread().sleep(1000);
+	     
+	            }
+	        }
+	        catch (InterruptedException ex) {
+	        	
+	        }
+	        catch(Ice.CommunicatorDestroyedException ex)
+	        {
+	            // Ignore
+	        }
+
+	        return 0;
+	}
+	
+	private IceStorm.TopicPrx iceSetup(String topicName) {
+		IceStorm.TopicManagerPrx manager = IceStorm.TopicManagerPrxHelper.checkedCast(communicator().propertyToProxy("SmartHome.Proxy"));
+        if(manager == null) {
+            System.err.println("Invalid proxy");
+            System.exit(1);
+        }
+        IceStorm.TopicPrx topic;
+        try
+        {
+            topic = manager.retrieve(topicName);
+        }
+        catch(IceStorm.NoSuchTopic e)
+        {
+            try
+            {
+                topic = manager.create(topicName);
+            }
+            catch(IceStorm.TopicExists ex)
+            {
+                System.err.println(appName() + ": temporary failure, try again.");
+                return 1;
+            }
+        }		
+	}
+
+}

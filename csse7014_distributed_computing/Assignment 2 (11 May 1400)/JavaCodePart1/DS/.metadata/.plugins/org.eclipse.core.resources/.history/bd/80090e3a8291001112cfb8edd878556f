@@ -1,0 +1,6 @@
+
+abstract public class FileOperation extends Ice.Application {
+	public FileOperation(String file) {
+		
+	}
+}

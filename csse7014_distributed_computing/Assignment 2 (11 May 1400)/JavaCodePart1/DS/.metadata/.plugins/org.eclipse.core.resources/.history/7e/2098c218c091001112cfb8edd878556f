@@ -1,0 +1,16 @@
+module exchange {
+
+	interface TemperatureHomemanager {
+		void temperatureData(int data);
+	};
+	
+	interface BpheartrateHomemanager {
+		void bpHeartrateData(string data, string user);
+	};
+	
+	interface UIHomemanager {
+		int getTemperature();
+		string getBpHeartrate(string user);
+		boolean userExists(string user);
+	};
+};

@@ -1,0 +1,15 @@
+
+public class Client extends Ice.Application {
+
+		public static void main(String[] args) {
+			Client s = new Client();
+			int status = s.main("Client", args);
+			System.exit(status);
+		}
+
+		@Override
+		public int run(String[] args) {
+			
+			return 0;
+		}
+}

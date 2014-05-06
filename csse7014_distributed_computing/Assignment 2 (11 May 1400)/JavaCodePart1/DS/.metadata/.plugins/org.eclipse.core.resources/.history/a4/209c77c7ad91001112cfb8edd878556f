@@ -1,0 +1,10 @@
+module exchange {
+
+	interface SensorHomemanager {
+		void temperatureData(int data);
+	};
+	
+	interface BpheartrateHomemanager {
+		void bpHeartrateData(int bpdata, int heartrateData);
+	};
+};

@@ -1,0 +1,4 @@
+#
+# This property is used by the clients to connect to IceStorm.
+# SmartHome/TopicManager is defined in config.service
+SmartHome.Proxy=SmartHome/TopicManager:default -p 10000

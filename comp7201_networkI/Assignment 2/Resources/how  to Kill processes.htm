@@ -1,0 +1,787 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>   Kill process in Linux or terminate a process in UNIX or Linux systems</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="title" content="The University of Queensland" />
+<meta name="description" content="The School of Information Technology and Electrical Engineering -    Kill process in Linux or terminate a process in UNIX or Linux systems" />
+<meta name="keyword" content="study, engineering, information technology, computer science, computer engineering, computer degree, electrical engineering, computers, University of Queensland, UQ, Queensland university, Australian universities, Queensland universities, Brisbane, Australia" />
+
+<link rel='stylesheet' href='/_templates/itee-v4/css/tab.css' type='text/css' />
+<link rel='stylesheet' href='/_templates/itee-v4/css/subpage.css' type='text/css' />
+<link rel='stylesheet' href='/_templates/itee-v4/css/template.css' type='text/css' />
+<link rel="icon" href="http://www.uq.edu.au/images/home/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://www.uq.edu.au/images/home/favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="/_templates/itee-v4/js/template.js"></script>
+<script type="text/javascript">
+  function goto_url(form)
+	{
+		if (form.search_text.value == "")
+		{
+			alert("Please enter a search term");
+			return false;
+		}
+		var url = form.search_select[form.search_select.selectedIndex].value + escape(form.search_text.value);
+		document.location = url;
+		return false;
+	}
+</script>
+</head>
+<body><!--START: Header -->
+<form name="search_form" onsubmit="return goto_url(this)" action="" style="margin: 0px;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table-header" summary="UQ Header">
+<tr>
+<td width="10%" rowspan="2"><a href="http://www.uq.edu.au/"><img src="/_templates/itee-v4/images/uq-logo.gif" width="200" height="72" alt="The University of Queensland Homepage" border="0" /></a></td>
+<td width="90%" colspan="2" class="toplinks">
+
+<!-- Start: Top Bar -->
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td width="70%" class="toplinks" align="left"><img src="/_templates/itee-v4/images/top-links.gif" width="392" height="17" usemap="#Map" border="0" alt="" /><map name="Map" id="Map"><area shape="rect" coords="23,3,76,15" href="http://www.uq.edu.au/" alt="UQ Homepage" title="UQ Homepage" /><area shape="rect" coords="82,3,129,15" href="http://www.uq.edu.au/search" alt="Search UQ" title="Search UQ" /><area shape="rect" coords="137,3,196,15" href="http://www.uq.edu.au/contacts" alt="Find all Contacts at UQ" title="Find all Contacts at UQ" /><area shape="rect" coords="202,3,241,15" href="http://www.uq.edu.au/study" alt="Study Options at UQ" title="Study Options at UQ" /><area shape="rect" coords="249,3,295,15" href="http://www.uq.edu.au/events" alt="Events at UQ" title="Events at UQ" /><area shape="rect" coords="300,3,334,15" href="http://www.uq.edu.au/maps" alt="UQ Maps" title="UQ Maps" /><area shape="rect" coords="344,3,391,15" href="http://www.uq.edu.au/library" alt="UQ Library" title="UQ Library" /></map></td><td width="30%" align="right"><a href="http://www.my.uq.edu.au"><img src="/_templates/itee-v4/images/my-uq.gif" width="69" height="17" alt="Link to my.UQ" border="0" /></a></td></tr></table>
+<!-- End: Top Bar -->
+
+</td>
+</tr>
+<tr>
+<td width="70%" class="header" align="left"><a href="http://www.itee.uq.edu.au/"><img src="/_templates/itee-v4/images/header.gif" width="379" height="55" alt="School of ITEE" border="0" /></a></td>
+<td width="30%" class="header" align="right"><a href="http://www.itee.uq.edu.au/"><img src="/_templates/itee-v4/images/top-right.gif" width="190" height="55"  border="0" alt="ITEE Main Website"/></a></td>
+</tr>
+<tr>
+<td height="21" class="searchbar" align="right" colspan="3">
+
+<!-- Start: Search Form -->
+<table border="0" cellspacing="0" cellpadding="0" align="right" summary="Search Box">
+<tr>
+<td>
+<select name="search_select">
+<option value="http://www.google.com/u/itee?q=" selected="selected">Public ITEE</option>
+<option value="http://www.uq.edu.au/search/index.asp?q1=">All UQ</option>
+<option value="http://www.uq.edu.au/search?site=default_collection&output=xml_no_dtd&client=ws&proxystylesheet=ws&q=site:itee.uq.edu.au+">ITEE via UQ</option>
+</select>&nbsp;
+<input class="formfield-search" type="text" name="search_text" id="SearchUQ" size="18" maxlength="100" />&nbsp;
+</td>
+<td>
+<input type="image" name="submit" value="search" src="/_templates/itee-v4/images/search_button.gif" alt="Search" class="searchbutton" />&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+<!-- End: Search Form -->
+
+</td>
+</tr>
+</table>
+</form>
+<!-- END: Header -->
+
+<!-- START: Main Content -->
+<table border="0" cellspacing="0" cellpadding="0" summary="Content Table" class="mainblockpart">
+<tr>
+
+
+<!-- Start: Left Column -->
+<td width="200" class="menu" valign="top">
+
+
+<img src="/_templates/itee-v4/images/generic_content25.jpg" width="193" height="200" alt="" class="content-image" /><br />
+
+
+<div id="menu-header">IN THIS SECTION</div>
+<img src="/_templates/itee-v4/images/transparent.gif" width="1" height="1" alt="" /><br />
+
+<!-- Navigation Menu Starts - Modify according to the links required. Do not remove '&#187;' -->
+<div id="button">
+<table class="navtable"><tr><td>
+<ul>
+
+
+<li class="unselected"><a href="how  to Kill processes.htm">&#187;    Kill process in Linux or terminate a process in UNIX or Linux systems</a></li>
+
+
+</ul>
+</td></tr></table>
+</div>
+
+
+<br />
+<div id="quick-links">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><th colspan="3">QUICK LINKS</th></tr>
+
+
+<tr><td class="ql-l">
+<img src="/_templates/itee-v4/images/quick-links-arrow.gif" width="9" height="9" alt="" /></td>
+<td class="ql-m"><a href="http://www.itee.uq.edu.au/">ITEE Public Web</a></td><td class="ql-r">&nbsp;</td></tr>
+<tr><td class="ql-l">
+<img src="/_templates/itee-v4/images/quick-links-arrow.gif" width="9" height="9" alt="" /></td>
+<td width="150"><a href="http://studenthelp.itee.uq.edu.au/">Student IT Help</a></td><td class="ql-r">&nbsp;</td></tr>
+<tr><td class="ql-l">
+<img src="/_templates/itee-v4/images/quick-links-arrow.gif" width="9" height="9" alt="" /></td>
+<td class="ql-m"><a href="http://internal.itee.uq.edu.au/">ITEE Internal Web</a></td><td class="ql-r">&nbsp;</td></tr>
+<tr><td class="ql-l">
+<img src="/_templates/itee-v4/images/quick-links-arrow.gif" width="9" height="9" alt="" /></td>
+<td class="ql-m"><a href="http://help.itee.uq.edu.au/">Staff IT Help</a></td><td class="ql-r">&nbsp;</td></tr>
+
+
+
+<tr><td class="ql-b" colspan="3">&nbsp;</td></tr>
+</table>
+</div>
+<br />
+
+<br />
+<center>
+<a href="http://www.itee.uq.edu.au/about_ITEE/news.php"><img src="/_templates/itee-v4/images/feature_news.gif" width="166" height="41" alt="ITEE News and Events" border="0" /></a>
+</center>
+<br />
+
+</td>
+<!--End: Left Column -->
+
+
+<!-- Start: Middle Column -->
+
+<td valign="top" width="95%"><br />
+
+
+<!-- START: Breadcrumb Trail -->
+<div id="breadcrumb">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="100%">
+<a href="http://www.itee.uq.edu.au/">ITEE Home</a> &#187; <a href="./../../">Coms3200</a> &#187; <a href="./../">Assignments</a> &#187; <a href="./">A2 Examples</a> &#187;    Kill process in Linux or terminate a process in UNIX or Linux systems</td><td width="110" align="right" nowrap="nowrap">
+<!-- Start: Print Icon -->
+
+
+<div align="right">
+<a href="/~coms3200/Assignments/A2_examples/how  to Kill processes.htm?print=1">
+<img src="/_templates/itee-v4/images/icon-print.gif" width="16" height="14" border="0" alt="Printer Friendly Version" />
+</a>
+<a href="/~coms3200/Assignments/A2_examples/how  to Kill processes.htm?print=1" title="Printer Friendly Version">Print version</a>&nbsp;&nbsp;</div>
+
+
+<!-- End: Print Icon -->
+</td></tr>
+</table>
+</div>
+<!-- END: Breadcrumb Trail -->
+
+
+<!-- Start: Content Heading Table -->
+<table width="97%" cellpadding="0" cellspacing="2" border="0" align="center">
+<tr>
+<td class="contentheader" width="28"><img src="/_templates/itee-v4/images/level2-arrow.gif" width="28" height="28" alt="" /></td>
+<td class="contentheader" width="100%" align="left">&nbsp;Kill process in Linux or terminate a process in UNIX or Linux systems</td>
+</tr>
+<tr>
+<td colspan="2"><img src="/_templates/itee-v4/images/level2-underline.gif" width="395" height="1" alt="" /></td>
+</tr>
+</table>
+<!-- END: Content Heading Table -->
+
+<div id="content">
+
+
+<div id="container">
+<div id="page">
+<ul id="tabs">
+<li><a href="/" title="FAQ Home Page">Home</a></li>
+<li><a href="http://www.cyberciti.biz/tips/about-us" title="About us">About</a></li>
+<li><a href="http://nixcraft.com/" title="Linux / UNIX Tech Support Forum">Forum</a></li>
+<li><a href="http://bash.cyberciti.biz/" title="Linux/UNIX Shell scripts">Shell Scripts</a></li>
+<li><a href="http://www.cyberciti.biz/tutorials.php" title="Linux/UNIX tutorials">Tutorials</a></li>
+		<li class="rss"><a href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" title="Frequently Asked Questions About Linux / UNIX RSS Feed" rel="nofollow">Subscribe</a></li>
+</ul>
+	<div id="header">
+<div id="leaderboard"><div id="lbtop"><div id="adstopage"></div></div></div><div id="crumbslogo"><a href="/">Linux FAQ / Howtos</a></div>	</div>
+	<div id="content_box">
+		<div id="content" class="hfeed">
+
+			<div class="post-290 post hentry category-debian-ubuntu category-linux category-redhat-and-friends category-solaris-unix category-suse category-unix category-ubuntu-linux tag-grep-command tag-kill-command tag-killall-command tag-linux tag-pidof-command tag-ps-command post_box top" id="post-290">
+				<div class="headline_area">
+					
+				</div>
+				<div class="format_text entry-content">
+<div style='float:right;margin-top:0px;margin-left:5px;'><a href='/faq/category/linux/' title='See all GNU/Linux related FAQ'><img src='http://figs.cyberciti.biz/3rdparty/linux-logo.png' border='0' /></a></div>
+<p><strong><span style='color: rgb(255, 0, 0);'>Q</span></strong>. How do I kill process in Linux?</p>
+<p><strong><span style='color: rgb(0, 153, 0);'>A</span></strong>. <span style='color: rgb(153, 102, 51);'>Linux</span> and all other <span style='color: rgb(0, 153, 0);'>UNIX</span> like oses comes with kill command. The  command kill sends the specified signal (such as kill process) to the specified process or process group. If no signal is  specified, the TERM signal is sent. </p>
+<h2>Kill process using kill command under Linux/UNIX</h2>
+<p>kill command works under both Linux and UNIX/BSD like operating systems.</p>
+<h3>Step #1: First, you need to find out process PID (process id)</h3>
+<p>Use ps command or pidof command to find out process ID (PID). Syntax:<br />
+<strong>ps aux | grep processname<br />
+pidof processname</strong></p>
+<p>For example if process name is lighttpd, you can use any one of the following command to obtain process ID:<br />
+<code># ps aux | grep lighttpd</code>Output:
+<pre>
+lighttpd  3486  0.0  0.1   4248  1432 ?        S    Jul31   0:00 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
+lighttpd  3492  0.0  0.5  13752  3936 ?        Ss   Jul31   0:00 /usr/bin/php5-cg</pre>
+<p>OR use pidof command which is use to find the process ID of a running program:<br />
+<code># pidof lighttpd</code>Output:
+<pre>3486
+</pre>
+<h3>Step #2: kill process using PID (process id)<br />
+</h3>
+<p>Above command tell you PID (3486) of lighttpd process. Now kill process using this PID:<br />
+<code># kill 3486</code><br />
+OR<br />
+<code># kill -9 3486</code><br />
+Where,</p>
+<ul>
+<li>-9 is special Kill signal, which will kill the process.</li>
+</ul>
+<h2>killall command examples</h2>
+<p>DO NOT USE killall command on UNIX system (Linux only command). You can also use killall command. The killall command kill processes by name (no need to find PID):<br />
+<code># killall -9 lighttpd</code><br />
+Kill Firefox process:<br />
+<code># killall -9 firefox-bin</code><br />
+As I said earlier killall on UNIX system does something else. It kills all process and not just specific process. Do not use killall on UNIX system (use kill -9).</p>
+<!-- <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+				xmlns:dc="http://purl.org/dc/elements/1.1/"
+				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+			<rdf:Description rdf:about="http://www.cyberciti.biz/faq/kill-process-in-linux-or-terminate-a-process-in-unix-or-linux-systems/"
+    dc:identifier="http://www.cyberciti.biz/faq/kill-process-in-linux-or-terminate-a-process-in-unix-or-linux-systems/"
+    dc:title="Kill process in Linux or terminate a process in UNIX or Linux systems"
+    trackback:ping="http://www.cyberciti.biz/faq/kill-process-in-linux-or-terminate-a-process-in-unix-or-linux-systems/trackback/" />
+</rdf:RDF> -->
+
+<div id="subscribebox"><div id="leftbox">Want to read Linux tips and tricks, but don't have time to check our blog everyday? Subscribe to our <strong>daily email newsletter</strong> to make sure you don't miss a single tip/tricks. Subscribe to our <em><a href="http://www.cyberciti.biz/tips/subscribe#weekly" rel="nofollow">weekly newsletter here</a></em>!	<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=Nixcraft-LinuxFreebsdSolarisTipsTricks', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><input type="text" class="text_input" name="email" value="you@address.com" id="name" onclick="if (this.value=='you@address.com') {this.value=''};" onblur="if (this.value=='') {this.value='you@address.com';}" /><input type="hidden" value="Nixcraft-LinuxFreebsdSolarisTipsTricks" name="uri"/>
+<input type="hidden" name="loc" value="en_US"/><input value="Subscribe" class="form_submit" type="submit"></form></div>
+
+	<ul id="utilitylinks">
+
+	 <li id="email"><a href="/email.php?hash=1&url=http://www.cyberciti.biz/faq/kill-process-in-linux-or-terminate-a-process-in-unix-or-linux-systems/&subject=Kill process in Linux or terminate a process in UNIX or Linux systems"  rel="nofollow" title="Email FAQ to a friend">Email FAQ to a friend</a></li><li id="print"><a href="http://www.cyberciti.biz/faq/kill-process-in-linux-or-terminate-a-process-in-unix-or-linux-systems/print/" title="Print this FAQ" rel="nofollow">Printable version</a></li><li id="rss"><a href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" title="RSS" rel="nofollow">Rss Feed</a><br /></li><li id="lastupdated">Last Updated: <acronym title="August / 22 / 2007">08/22/07</acronym>
+</a></li></ul></div>				</div>
+			</div>
+
+			<div id="comments">
+
+				<div class="comments_intro">
+					<p><span class="bracket">{</span> <span>18</span> comments&#8230; read them below or <a href="#respond" rel="nofollow">add one</a> <span class="bracket">}</span></p>
+				</div>
+
+				<dl id="comment_list">
+
+					<dt class="comment" id="comment-5178">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/223eddc99030fdaeb0962504531c2a46?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-5178" title="Permalink to this comment" rel="nofollow">1</a></span>
+						<span class="comment_author">kavita</span> <span class="comment_time">12.19.06 at 8:34 am</span>
+					</dt>
+					<dd class="comment">
+						<div class="format_text">
+<p>how to kill a process using system call?</p>
+						</div>
+					</dd>
+		
+					<dt class="comment alt" id="comment-36958">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/4865a94db78caea296d9834dcce904d8?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-36958" title="Permalink to this comment" rel="nofollow">2</a></span>
+						<span class="comment_author">ganesh</span> <span class="comment_time">10.24.07 at 9:00 am</span>
+					</dt>
+					<dd class="comment alt">
+						<div class="format_text">
+<p>Kill are of two types:</p>
+<p>1.Graceful Kill<br />
+     kill -15 pid<br />
+2.Forcible Kill</p>
+<p>    Kill -9 pid.</p>
+<p>Kill pid. This format wont work.. Just check it..</p>
+<p>These kill differs in releasing resources forcibly or gracefully&#8230;&#8230;&#8230;.</p>
+						</div>
+					</dd>
+		
+					<dt class="comment" id="comment-37089">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/d7e68a5bf5c645900bd1470462d1390b?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-37089" title="Permalink to this comment" rel="nofollow">3</a></span>
+						<span class="comment_author">Josir</span> <span class="comment_time">11.27.07 at 12:56 pm</span>
+					</dt>
+					<dd class="comment">
+						<div class="format_text">
+<p>I login as root, kill -9 a process but it refuses to stop. Is there a more powerful command?</p>
+						</div>
+					</dd>
+		
+					<dt class="comment alt" id="comment-37526">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/859f0841e291ff9588af61fbf467157e?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-37526" title="Permalink to this comment" rel="nofollow">4</a></span>
+						<span class="comment_author">Shehab</span> <span class="comment_time">02.26.08 at 2:07 pm</span>
+					</dt>
+					<dd class="comment alt">
+						<div class="format_text">
+<p>Ganesh<br />
+the kill pid works fine if u&#8217;re logged in as the root.</p>
+						</div>
+					</dd>
+		
+					<dt class="comment" id="comment-38053">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/43826bc86a3345633fe382970d5ea2c5?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-38053" title="Permalink to this comment" rel="nofollow">5</a></span>
+						<span class="comment_author">Manojg</span> <span class="comment_time">06.06.08 at 1:47 pm</span>
+					</dt>
+					<dd class="comment">
+						<div class="format_text">
+<p>I tried to kill a process by kill -9 PID in user as well root mode. But it could not kill the process. What is another way to force kill?</p>
+						</div>
+					</dd>
+		
+					<dt class="comment alt" id="comment-38170">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/893509b0f0b4a880e7854aa07e4e3416?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-38170" title="Permalink to this comment" rel="nofollow">6</a></span>
+						<span class="comment_author">mircea</span> <span class="comment_time">06.26.08 at 6:00 pm</span>
+					</dt>
+					<dd class="comment alt">
+						<div class="format_text">
+<p>Is the process changing PID after your kill -9 command? Because if it does it means it is a new process. This usually happens with apps that are beeing watched by some other process that will respawn the dead process.<br />
+To kill such a process you first need to find out what are the means used to respawn it and act accordingly. A &#8220;ps axf&#8221; will show you the relationship between processes. If the preocess you try to kill is a child of other process then it is most likely that the parent is respawning the child. So you will need to kill that process first. Otherwise, kill -9 used as root is &#8220;invincible&#8221; :)</p>
+						</div>
+					</dd>
+		
+					<dt class="comment" id="comment-39356">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/b24d74877479dd4e3136b4bf3d5f0880?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-39356" title="Permalink to this comment" rel="nofollow">7</a></span>
+						<span class="comment_author">Shivin Vijai</span> <span class="comment_time">12.03.08 at 9:07 am</span>
+					</dt>
+					<dd class="comment">
+						<div class="format_text">
+<p>Hi,</p>
+<p>One small doubt .</p>
+<p>I know parent of all process is init and its PID is zero. Can i kill pid zero? What happend to the system if i kill pid zero?</p>
+<p>Regards<br />
+Shivin</p>
+						</div>
+					</dd>
+		
+					<dt class="comment alt" id="comment-39966">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/0e3fd2b12274092107125291b2e64bb3?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-39966" title="Permalink to this comment" rel="nofollow">8</a></span>
+						<span class="comment_author">Ethan "eekee" Grammatikidis</span> <span class="comment_time">01.23.09 at 1:02 am</span>
+					</dt>
+					<dd class="comment alt">
+						<div class="format_text">
+<p>I have a process that will not respond to any kill signal, nor can bash suspend it, nor did it react on removal of the USB device it was trying to access. I&#8217;m told it could be a buggy driver holding a global semaphore or &#8220;oopsed&#8221;, whatever that is. I guess there are some things that only a reboot will fix. :)</p>
+						</div>
+					</dd>
+		
+					<dt class="comment" id="comment-40143">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/c9be0d4077863f9c5f9c035a1347aced?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-40143" title="Permalink to this comment" rel="nofollow">9</a></span>
+						<span class="comment_author">Jeff</span> <span class="comment_time">02.05.09 at 7:12 pm</span>
+					</dt>
+					<dd class="comment">
+						<div class="format_text">
+<p>If it is respawning based on an entry in your inittab then you can modify the inittab (eg. remark the entry out) then issue :</p>
+<p>/sbin/telinit q </p>
+<p>telinit is linked to init and the q flag tells init to re-examine the inittab file.</p>
+						</div>
+					</dd>
+		
+					<dt class="comment alt" id="comment-40379">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/6150049411cd5812443cf7880f510159?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-40379" title="Permalink to this comment" rel="nofollow">10</a></span>
+						<span class="comment_author">karthickelc</span> <span class="comment_time">02.19.09 at 12:09 pm</span>
+					</dt>
+					<dd class="comment alt">
+						<div class="format_text">
+<p>i have inserted a pendrive in suse linux sp10. when i try to remove the pen drive the dialog displays device busy and shows its process id. every time i use the command kill -9 pid .<br />
+how can i avoid this?</p>
+						</div>
+					</dd>
+		
+					<dt class="comment" id="comment-41365">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/99184266162bb874b65cf81749ea17f4?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-41365" title="Permalink to this comment" rel="nofollow">11</a></span>
+						<span class="comment_author">Klimentine</span> <span class="comment_time">04.26.09 at 12:33 pm</span>
+					</dt>
+					<dd class="comment">
+						<div class="format_text">
+<p>Thanks for this tuto, is simple and easy to use</p>
+						</div>
+					</dd>
+		
+					<dt class="comment alt" id="comment-41493">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/d6a3f04161f3416fb250dc1c4202b722?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-41493" title="Permalink to this comment" rel="nofollow">12</a></span>
+						<span class="comment_author">maibangcomputer</span> <span class="comment_time">05.06.09 at 5:34 am</span>
+					</dt>
+					<dd class="comment alt">
+						<div class="format_text">
+<p>thank you, it works&#8230;</p>
+						</div>
+					</dd>
+		
+					<dt class="comment" id="comment-41625">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/6704aaba3ca5c825df907d160b339718?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-41625" title="Permalink to this comment" rel="nofollow">13</a></span>
+						<span class="comment_author">Sanjay</span> <span class="comment_time">05.15.09 at 2:25 pm</span>
+					</dt>
+					<dd class="comment">
+						<div class="format_text">
+<p>Thanks a lot dude!!!</p>
+						</div>
+					</dd>
+		
+					<dt class="comment alt" id="comment-42261">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/cb43aad7d2d00f03721d30339ad3fe2a?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-42261" title="Permalink to this comment" rel="nofollow">14</a></span>
+						<span class="comment_author">Shinnosuke</span> <span class="comment_time">06.26.09 at 10:56 pm</span>
+					</dt>
+					<dd class="comment alt">
+						<div class="format_text">
+<p>I got a window I cannot close, it is on top and I cannot access to the menus.  I cannot move it either, the cursor cannot be moved outseide that window. So the only way to close the application should be a key combination, isn&#8217;t it? But which? (BTW, I&#8217;m a complete newbie, trying Ubuntu for the first time)</p>
+						</div>
+					</dd>
+		
+					<dt class="comment" id="comment-42406">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/704a259cd42167ccf354781c4c2faa8b?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-42406" title="Permalink to this comment" rel="nofollow">15</a></span>
+						<span class="comment_author">sshah</span> <span class="comment_time">07.07.09 at 8:00 am</span>
+					</dt>
+					<dd class="comment">
+						<div class="format_text">
+<p>Anybody can guide me how can I kill time based processes? for example I want to kill processes that are 1 day old.</p>
+						</div>
+					</dd>
+		
+					<dt class="comment alt" id="comment-42888">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/0e01cca109e3df99ed12572544486b74?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-42888" title="Permalink to this comment" rel="nofollow">16</a></span>
+						<span class="comment_author">zaheer arif</span> <span class="comment_time">08.04.09 at 11:49 am</span>
+					</dt>
+					<dd class="comment alt">
+						<div class="format_text">
+<p>Dear I have a question.<br />
+                                             Suppose i have a function that does some calculations.Well what i want to do,I want to stop the calculations in that function after some time (suppose 5 seconds).I really appreciate if anybody guides me in this regard.   </p>
+<p>thanks in Advance</p>
+						</div>
+					</dd>
+		
+					<dt class="comment" id="comment-42936">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/1d64d0c68de3510a16f8dc3b15335741?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-42936" title="Permalink to this comment" rel="nofollow">17</a></span>
+						<span class="comment_author">vishnu</span> <span class="comment_time">08.07.09 at 3:57 pm</span>
+					</dt>
+					<dd class="comment">
+						<div class="format_text">
+<p>Very very nice</p>
+						</div>
+					</dd>
+		
+					<dt class="comment alt" id="comment-43045">
+						<span class="avatar"><img alt='' src='http://www.gravatar.com/avatar/0e01cca109e3df99ed12572544486b74?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+						<span class="comment_num"><a href="#comment-43045" title="Permalink to this comment" rel="nofollow">18</a></span>
+						<span class="comment_author">zaheer arif</span> <span class="comment_time">08.12.09 at 1:36 pm</span>
+					</dt>
+					<dd class="comment alt">
+						<div class="format_text">
+<p>What is nice ?</p>
+						</div>
+					</dd>
+		
+				</dl>
+
+				<div id="respond">
+					<p>Leave a Comment</p>
+				</div>
+
+				<form action="http://www.cyberciti.biz/faq/wp-comments-post.php" method="post" id="commentform">
+					<p><input class="text_input" type="text" name="author" id="author" value="" tabindex="1" aria-required="true" /><label for="author">Name <span class="required" title="Required">*</span></label></p>
+					<p><input class="text_input" type="text" name="email" id="email" value="" tabindex="2" aria-required="true" /><label for="email">E-mail <span class="required" title="Required">*</span></label></p>
+	
+					<p class="comment_box"><textarea name="comment" id="comment" tabindex="4" cols="40" rows="8"></textarea></p>
+					<p class="allowed">
+						<span>
+<em>You can use these <acronym title="HyperText Markup Language">HTML</acronym> tags and attributes:</em> &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; 
+						</span>
+					</p>
+
+
+	<p style="clear: both;" class="subscribe-to-comments">
+	<input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" />
+	<label for="subscribe">Notify me of followup comments via e-mail</label>
+	</p>
+
+
+					<p>
+						<input name="submit" class="form_submit" type="submit" id="submit" tabindex="5" value="Submit" />
+						<input type="hidden" name="comment_post_ID" value="290" />
+					</p>
+					<center><div id='adslargerect'></div></center><small><p class="post_tags">Tagged as: <a href="http://www.cyberciti.biz/faq/tag/grep-command/" rel="tag">grep command</a>, <a href="http://www.cyberciti.biz/faq/tag/kill-command/" rel="tag">kill command</a>, <a href="http://www.cyberciti.biz/faq/tag/killall-command/" rel="tag">killall command</a>, <a href="http://www.cyberciti.biz/faq/tag/linux/" rel="tag">Linux</a>, <a href="http://www.cyberciti.biz/faq/tag/pidof-command/" rel="tag">pidof command</a>, <a href="http://www.cyberciti.biz/faq/tag/ps-command/" rel="tag">ps command</a></p></small>
+				</form>
+
+			</div>
+
+					<div class="prev_next post_nav">
+						<p class="previous">Previous post: <a href="http://www.cyberciti.biz/faq/how-reduce-or-shrink-logical-volume-on-linux/">How reduce or shrink Logical Volume on Linux</a></p>
+						<p>Next post: <a href="http://www.cyberciti.biz/faq/why-my-apache-server-side-include-ssi-is-not-working/">Why my Apache Server Side Include (SSI) is not working?</a></p>
+					</div>
+		</div>
+
+		<div id="sidebars">
+			<div id="multimedia_box">
+				<div id="custom_box">
+Sign up for our daily email newsletter:<br /><br />
+<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=Nixcraft-LinuxFreebsdSolarisTipsTricks', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><input type="text" size="23" class="text_input" name="email" value="you@address.com" id="name" onclick="if (this.value=='you@address.com') {this.value=''};" onblur="if (this.value=='') {this.value='you@address.com';}" /><input type="hidden" value="Nixcraft-LinuxFreebsdSolarisTipsTricks" name="uri"/>
+<input type="hidden" name="loc" value="en_US"/><input value="Sign up" class="form_submit" type="submit"></form>
+<br />
+
+<a href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" rel="nofollow"><img src="http://c.cyberciti.biz/cbzcache/images/cbzrss.gif" alt="" border="0" width="16" height="16" style="vertical-align: top; border:0"/></a>&nbsp;
+ <a href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" rel="nofollow"><img src="http://feedproxy.google.com/~fc/Nixcraft-LinuxFreebsdSolarisTipsTricks?anim=0"   height="26" width="88" style="vertical-align: top; border:0" alt="" /></a>&nbsp;
+ <a href="http://fusion.google.com/add?source=atgs&feedurl=http%3A//feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" rel="nofollow"><img src="http://c.cyberciti.biz/cbzcache/images/cbzgooglerss.gif" alt="" border="0" width="67" height="17" style="vertical-align: top; border:0" /></a>&nbsp;
+ <a href="http://add.my.yahoo.com/content?.intl=us&url=http%3A//feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" rel="nofollow"><img src="http://c.cyberciti.biz/cbzcache/images/cbzyahoorss.gif" alt="" border="0" width="62" height="17" style="vertical-align: top; border:0" /></a>&nbsp;
+				</div>
+			</div>
+			<div id="sidebar_1" class="sidebar">
+				<ul class="sidebar_list">
+<li class="widget widget_text" id="text-29977782565"><div id='adstoprect'></div></li><li class="widget widget_text" id="text-299777822">
+<div class="textwidget">
+<form action="http://www.cyberciti.biz/linux-search.php" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="002165917076592449621:d37x4vctltg" />
+    <input type="hidden" name="cof" value="FORID:11" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="27" />
+    <input type="submit" name="sa" value="Search" />
+
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+</div>
+</li>
+<li class="widget widget_text" id="text-299777825652"><div id='adstoprect2'></div></li><li class="widget widget_related_white_papers" id="wp-424932161">
+       <div id="adswhitepapers"></div>
+       </li><li class="widget widget_related_faq"><h3>Related FAQs</h3><ul><li><a href="http://www.cyberciti.biz/faq/linux-find-out-what-process-are-eating-all-memory-and-time-allocated-to-process/" rel="bookmark" title="Permanent Link: Linux find out what process are eating all memory and time allocated to process">Linux find out what process are eating all memory and time allocated to process</a></li><li><a href="http://www.cyberciti.biz/faq/howto-kill-unix-process-with-kill-command/" rel="bookmark" title="Permanent Link: Killing processes in UNIX">Killing processes in UNIX</a></li><li><a href="http://www.cyberciti.biz/faq/show-all-running-processes-in-linux/" rel="bookmark" title="Permanent Link: Show All Running Processes in Linux">Show All Running Processes in Linux</a></li><li><a href="http://www.cyberciti.biz/faq/stop-or-terminate-linux-command-process/" rel="bookmark" title="Permanent Link: Howto stop or terminate Linux command process with CTRL + C">Howto stop or terminate Linux command process with CTRL + C</a></li><li><a href="http://www.cyberciti.biz/faq/howto-linux-unix-killing-restarting-the-process/" rel="bookmark" title="Permanent Link: Linux / UNIX killing a process and restarting the same">Linux / UNIX killing a process and restarting the same</a></li></ul></li>	<li class="widget widget_related_cats">
+	<h3>FAQ Topics</h3>
+	<form action="http://www.cyberciti.biz/faq/" method="get">
+<select name='cat' id='cat' class='postform'  onchange='return this.form.submit()'>
+	<option value='-1'>Select category</option>
+	<option class="level-0" value="35">AIX&nbsp;&nbsp;(74)</option>
+	<option class="level-0" value="8601">Anti Spam&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="4">Apache&nbsp;&nbsp;(89)</option>
+	<option class="level-0" value="9097">Arch Linux&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="1057">backup&nbsp;&nbsp;(15)</option>
+	<option class="level-0" value="11">BASH Shell&nbsp;&nbsp;(353)</option>
+	<option class="level-0" value="42">Bind dns&nbsp;&nbsp;(29)</option>
+	<option class="level-0" value="33">CentOS&nbsp;&nbsp;(637)</option>
+	<option class="level-0" value="79">cpanel&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="450">csh&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="7254">Database&nbsp;&nbsp;(8)</option>
+	<option class="level-0" value="23">Debian / Ubuntu&nbsp;&nbsp;(686)</option>
+	<option class="level-0" value="8717">DJBDNS&nbsp;&nbsp;(7)</option>
+	<option class="level-0" value="5921">Eclipse IDE&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="19">EMail Servers&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="3683">exim mail server&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="2">FAQ&nbsp;&nbsp;(117)</option>
+	<option class="level-0" value="38">Featured&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="1512">fedora linux&nbsp;&nbsp;(133)</option>
+	<option class="level-0" value="20">File system&nbsp;&nbsp;(157)</option>
+	<option class="level-0" value="6">FreeBSD&nbsp;&nbsp;(432)</option>
+	<option class="level-0" value="5878">FreeBSD Jails (VPS)&nbsp;&nbsp;(27)</option>
+	<option class="level-0" value="26">FTP servers&nbsp;&nbsp;(10)</option>
+	<option class="level-0" value="40">Gnome&nbsp;&nbsp;(22)</option>
+	<option class="level-0" value="32">GNU C / C++&nbsp;&nbsp;(7)</option>
+	<option class="level-0" value="36">Hardware&nbsp;&nbsp;(154)</option>
+	<option class="level-0" value="14">HP-UX Unix&nbsp;&nbsp;(166)</option>
+	<option class="level-0" value="4914">ipfw firewall&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="16">Iptables&nbsp;&nbsp;(52)</option>
+	<option class="level-0" value="3226">ipv6&nbsp;&nbsp;(14)</option>
+	<option class="level-0" value="192">kde&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="5640">Korn Shell Scripting&nbsp;&nbsp;(9)</option>
+	<option class="level-0" value="7175">KSH Shell&nbsp;&nbsp;(13)</option>
+	<option class="level-0" value="25">Lighttpd&nbsp;&nbsp;(26)</option>
+	<option class="level-0" value="7">Linux&nbsp;&nbsp;(1052)</option>
+	<option class="level-0" value="4967">Linux / UNIX File Formats&nbsp;&nbsp;(13)</option>
+	<option class="level-0" value="9104">Linux Video Editor&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="3476">mac os x&nbsp;&nbsp;(19)</option>
+	<option class="level-0" value="4702">Monitoring&nbsp;&nbsp;(32)</option>
+	<option class="level-0" value="165">mozilla&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="7253">MS-SQL Server&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="3">MySQL&nbsp;&nbsp;(41)</option>
+	<option class="level-0" value="27">Networking&nbsp;&nbsp;(315)</option>
+	<option class="level-0" value="3894">nfs&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="5889">Nginx&nbsp;&nbsp;(12)</option>
+	<option class="level-0" value="18">Openbsd&nbsp;&nbsp;(195)</option>
+	<option class="level-0" value="1658">openssl&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="8897">OpenVZ&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="39">Package management&nbsp;&nbsp;(197)</option>
+	<option class="level-0" value="15">Perl&nbsp;&nbsp;(20)</option>
+	<option class="level-0" value="5092">PF Firewall&nbsp;&nbsp;(14)</option>
+	<option class="level-0" value="5">PHP&nbsp;&nbsp;(43)</option>
+	<option class="level-0" value="30">PostgreSQL&nbsp;&nbsp;(7)</option>
+	<option class="level-0" value="8110">Printing&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="34">Programming&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="5808">python&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="24">RedHat and Friends&nbsp;&nbsp;(596)</option>
+	<option class="level-0" value="31">Samba (SMB/CIFS)&nbsp;&nbsp;(7)</option>
+	<option class="level-0" value="9">Security&nbsp;&nbsp;(157)</option>
+	<option class="level-0" value="5017">Security Through Obscurity&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="983">selinux&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="8838">Sendmail&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="22">Solaris&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="13">Solaris-Unix&nbsp;&nbsp;(264)</option>
+	<option class="level-0" value="28">squid&nbsp;&nbsp;(16)</option>
+	<option class="level-0" value="3895">storage&nbsp;&nbsp;(20)</option>
+	<option class="level-0" value="21">Suse&nbsp;&nbsp;(424)</option>
+	<option class="level-0" value="12">Troubleshooting&nbsp;&nbsp;(375)</option>
+	<option class="level-0" value="17">Ubuntu Linux&nbsp;&nbsp;(556)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="10">UNIX&nbsp;&nbsp;(594)</option>
+	<option class="level-0" value="37">User Management&nbsp;&nbsp;(28)</option>
+	<option class="level-0" value="350">vim&nbsp;&nbsp;(13)</option>
+	<option class="level-0" value="41">Virtualization&nbsp;&nbsp;(19)</option>
+	<option class="level-0" value="8">Windows&nbsp;&nbsp;(94)</option>
+	<option class="level-0" value="5773">Wireless Networking&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1559">X Server&nbsp;&nbsp;(16)</option>
+</select>
+	<noscript><input type="submit" value="View" /></noscript>
+	</form>
+        </li>
+<li class="widget widget_nixcraft_text_ads" id="text-42424242">	
+	<div class="textwidget">
+		<h3>Sponsored Links</h3>
+			<ul>
+				<li><strong>Unified Communications: Thoughts, Strategies and Predictions.</strong><br/>Join the discussion. <br/><a href="http://clk.atdmt.com/M0N/go/167673424/direct/01/" onClick="javascript: pageTracker._trackPageview('/adclick/seamlessenterprise_dot_com/15aug_30sep/1');" target="_blank" rel="nofollow">www.seamlessenterprise.com</a></li>
+				<li><strong>IP Convergence</strong><br/>Integrate your wireless and wireline networks. Learn how from the experts at Sprint. <br/><a href="http://clk.atdmt.com/M0N/go/167673425/direct/01/" onClick="javascript: pageTracker._trackPageview('/adclick/seamlessenterprise_dot_com/15aug_30sep/2');" target="_blank" rel="nofollow">www.seamlessenterprise.com</a></li>
+				<li><strong>Wireless & Wireline Integration</strong><br/>Thoughts, strategies and solutions: join the discussion.  <br/> <a href="http://clk.atdmt.com/M0N/go/167673426/direct/01/" onClick="javascript: pageTracker._trackPageview('/adclick/seamlessenterprise_dot_com/15aug_30sep/3');" target="_blank" rel="nofollow">www.seamlessenterprise.com</a></li>
+				<li><strong>Unified Communications 2009</strong><br />Join the Discussion. Now.<br /><a href="http://clk.atdmt.com/M0N/go/167673427/direct/01/" onClick="javascript: pageTracker._trackPageview('/adclick/seamlessenterprise_dot_com/15aug_30sep/4');" target="_blank" rel="nofollow">www.seamlessenterprise.com</a></li>
+			</ul>
+	</div>
+		<div style="text-align:right;"><a href="/tips/classified-advertising" title="You can order a text ad on nixcraft too">See your text ad here</a></div>
+</li>				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+<div class="idglogo">
+            <img src="http://c.cyberciti.biz/cbzcache/images/idg-logo.gif" alt="" border="0" />
+	 </div><div class="copynotice">
+&copy;2006-2009 nixCraft. All rights reserved | 
+<a href="http://www.cyberciti.biz/tips/privacy">Privacy Policy</a> | 
+<a href="http://www.cyberciti.biz/tips/disclaimer">Terms of Service</a><br />
+<a href="http://www.cyberciti.biz/tips/about/advertising">Advertise</a> | 
+<a href="http://www.cyberciti.biz/tips/contact-us">Questions or Comments</a> |
+<a href="http://www.cyberciti.biz/faq/faqsitemaps/">Sitemap</a>
+</div>
+	</div>
+</div>
+</div>
+<!--[if lte IE 7]>
+<div id="ie_clear"></div>
+<![endif]-->
+<script type='text/javascript' src='http://simplyguide.com/r/www/delivery/spcjs.php?id=1'></script>
+<script type="text/javascript" src="http://c.cyberciti.biz/cbzcache/js/jqads.js"></script>
+<script type="text/javascript">
+<!--
+  function rotatenixCraftads(nixcraftAds){
+    $("#load-ads" + nixcraftAds).appendTo('#ads' + nixcraftAds)
+  }
+//-->
+</script>
+<div style="display:none">
+<div id="load-adstopage">
+<script type='text/javascript'><!--// <![CDATA[
+    OA_show(1);
+// ]]> --></script><noscript><a target='_blank' href='http://simplyguide.com/r/www/delivery/ck.php?n=3a538c5'><img border='0' alt='' src='http://simplyguide.com/r/www/delivery/avw.php?zoneid=1&amp;n=3a538c5' /></a></noscript>
+</div>
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('topage');
+//-->
+</script>
+
+<div style="display:none">
+<div id="load-adstoprect">
+<script type='text/javascript'><!--// <![CDATA[
+    OA_show(3);
+// ]]> --></script><noscript><a target='_blank' href='http://simplyguide.com/r/www/delivery/ck.php?n=f8aba04'><img border='0' alt='' src='http://simplyguide.com/r/www/delivery/avw.php?zoneid=3&amp;n=f8aba04' /></a></noscript>
+</div>
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('toprect');
+//-->
+</script>
+
+<div style="display:none">
+<div id="load-adstoprect2">
+<script type='text/javascript'><!--// <![CDATA[
+    OA_show(5);
+// ]]> --></script><noscript><a target='_blank' href='http://simplyguide.com/r/www/delivery/ck.php?n=af83a77'><img border='0' alt='' src='http://simplyguide.com/r/www/delivery/avw.php?zoneid=5&amp;n=af83a77' /></a></noscript>
+</div>
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('toprect2');
+//-->
+</script>
+
+<div style="display:none">
+<div id="load-adswhitepapers">
+<!-- begin ad tag-->
+<script type="text/javascript" src="http://www.dinclinx.com/?s=1596&e=0&t=1062&f=javascript"></script>
+<!-- End ad tag -->
+</div>
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('whitepapers');
+//-->
+</script>
+
+<div style="display:none">
+<div id="load-adslargerect">
+<script type='text/javascript'><!--// <![CDATA[
+    OA_show(7);
+// ]]> --></script><noscript><a target='_blank' href='http://simplyguide.com/r/www/delivery/ck.php?n=91995db'><img border='0' alt='' src='http://simplyguide.com/r/www/delivery/avw.php?zoneid=7&amp;n=91995db' /></a></noscript>
+</div>
+</div>
+
+<script type="text/javascript">
+<!--
+rotatenixCraftads('largerect');
+//-->
+</script>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-108650-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+
+
+
+</div>
+</td>
+</tr>
+</table>
+
+<!-- START: Feedback line - Do not Modify -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" summary="Feedback">
+<tr><td align="right" class="feedback"> <a href="http://www.uq.edu.au/privacy" title="View Privacy details" class="home">privacy</a> | <a href="mailto:webmasters&#064;itee.uq.edu.au" title="Give Feedback on this website" class="home">feedback</a>&nbsp;</td></tr>
+</table>
+<!-- END: Feedback line -->
+
+<!-- START: Footer - Change where necessary -->
+<table width="100%" cellpadding="1" cellspacing="1" border="0" summary="Website Footer">
+<tr>
+<td class="footer" align="right">
+&copy; 2002-2013 The University of Queensland, Brisbane, Australia<br />
+ABN 63 942 912 684<br />
+CRICOS Provider No: <a href="http://cricos.deewr.gov.au/Institution/InstitutionDetails.aspx?ProviderID=25" target="_blank" title="Takes you to the CRICOS website">00025B</a><br />
+
+
+Authorised by: Head of School<br />
+Maintained by: <a href="mailto:webmasters&#064;itee.uq.edu.au" title="Feedback">webmasters&#064;itee.uq.edu.au</a><br />
+
+
+Last Updated: 19 August, 2009, 3:34pm
+</td>
+</tr>
+</table>
+<!-- END: Footer -->
+
+</body>
+</html>

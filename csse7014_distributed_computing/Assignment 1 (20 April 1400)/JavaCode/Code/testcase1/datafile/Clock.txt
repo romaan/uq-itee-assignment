@@ -1,0 +1,3 @@
+Monday,3
+Wednesday,4
+Thursday,3

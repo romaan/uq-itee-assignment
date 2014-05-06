@@ -1,0 +1,86 @@
+/*****************************************
+ * SmartHomeUI.java
+ * User Interface to display current temperature, BP and Heart Rate of the current user
+ *
+ ******************************************/
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import exchange.UIHomemanagerPrx;
+import exchange.UIHomemanagerPrxHelper;
+
+
+final public class SmartHomeUI extends Ice.Application {
+private String userName;
+
+	public SmartHomeUI() throws Exception {
+		System.out.println("\n\nWelcome to the Smart Home Monitoring System");
+		System.out.print("Please enter your name:");
+		InputStreamReader inStream = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(inStream);	
+		userName = in.readLine();
+	}
+	
+	@Override
+	public int run(String[] args) {
+		try
+		{
+		Ice.ObjectPrx obj = communicator().stringToProxy("UIRequest:tcp -h 127.0.0.1 -p 5213");
+		UIHomemanagerPrx aUIHomeManager = UIHomemanagerPrxHelper.uncheckedCast(obj);
+			if (aUIHomeManager.userExists(userName)) {
+			System.out.println("Please start the sensors before logging the User Interface of the user");
+			System.exit(1);
+			}
+			char ch;
+			do {
+				printScreen();
+				ch = readInput();	
+				callRemoteMethod(ch, aUIHomeManager);
+			} while(ch != 'E');
+		} catch (Exception ex) {
+			System.out.println("Exception:"+ex.getMessage());
+		}
+		return 0;
+	}
+	
+	//Call RMI Invocation happen within this method
+	private void callRemoteMethod(char ch, UIHomemanagerPrx aUIHomeManager) {
+		switch (ch) {
+		case '1': System.out.println("Current Temperature is:"+aUIHomeManager.getTemperature()); 
+					break;
+		case '2': String [] bpHeart = aUIHomeManager.getBpHeartrate(userName).split("_");
+				 System.out.println("Current Heart Rate:"+bpHeart[0]+" BP:"+bpHeart[1]);
+					break;
+		case 'E': break;
+		case 13: break;
+		default: System.out.println("Invalid command");
+		}
+	}
+	
+	//ReadInput
+	private char readInput() throws Exception {
+		InputStreamReader inStream = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(inStream);
+		String tempStr = in.readLine();
+		return tempStr.length() > 0 ? tempStr.charAt(0) : 13;
+	}
+
+	//User Interface Screen Menu
+	private void printScreen() {
+		System.out.println("\n\nWelcome to the Smart Home Monitoring System");
+		System.out.println("Please select an option:");
+		System.out.println("1. View Current Temperature adjustment");
+		System.out.println("2. View Current Heart Rate and Blood Pressure");
+		System.out.println("E. Exit");
+	
+	}
+	public static void main(String[] args) {
+		try {
+		SmartHomeUI aSmartHomeUI = new SmartHomeUI();
+		aSmartHomeUI.main("SmartHomeUI", args);
+		} catch (Exception ex) {
+			System.out.println("Exception :"+ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+}

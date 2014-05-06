@@ -1,0 +1,43 @@
+/*****************************************
+ * SmartHomeUI.java
+ * User Interface to display current temperature, BP and Heart Rate of the current user
+ *
+ ******************************************/
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import exchange.UIHomemanagerPrx;
+import exchange.UIHomemanagerPrxHelper;
+
+
+public class SmartHomeUI extends Ice.Application {
+private String user;
+
+	public SmartHomeUI() {
+		System.out.println("\n\nWelcome to the Smart Home Monitoring System");
+		System.out.print("Please enter your name:");
+		InputStreamReader inStream = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(inStream);	
+	}
+	
+	@Override
+	public int run(String[] args) {
+		Ice.ObjectPrx obj = communicator().stringToProxy("UIRequest:tcp -h 127.0.0.1 -p 10000");
+		UIHomemanagerPrx aUIHomeManager = UIHomemanagerPrxHelper.uncheckedCast(obj);
+		System.out.println("Its me"+aUIHomeManager.getTemperature());
+		return 0;
+	}
+
+	private void printScreen() {
+		System.out.println("\n\nWelcome to the Smart Home Monitoring System");
+		System.out.println("Please select an option:");
+		System.out.println("1. View Current Temperature adjustment");
+		System.out.println("2. View Current Heart Rate and Blood Pressure");
+		System.out.println("E. Exit");
+	
+	}
+	public static void main(String[] args) {
+		new SmartHomeUI();
+	}
+
+}

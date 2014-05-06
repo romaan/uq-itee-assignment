@@ -1,0 +1,31 @@
+import Demo._HelloDisp;
+import Ice.Object;
+import Ice.ObjectAdapter;
+import Ice.Current;
+
+
+public class Server extends Ice.Application {
+
+	@SuppressWarnings("serial")
+	class HelloI extends _HelloDisp {
+		@Override
+		public void sayHello(String whois, Current __current) {
+			System.out.println("Hello World"+whois);
+			
+		}
+	}
+	@Override
+	public int run(String[] args) {
+		ObjectAdapter adapter = communicator().createObjectAdapterWithEndpoints("Hello","tcp -h 127.0.0.1 -p 10000");
+		adapter.add(new HelloI(), communicator().stringToIdentity("hello"));
+		adapter.activate();
+		communicator().waitForShutdown();
+		return 0;
+	}
+
+	public static void main(String [] args) {
+		Server s = new Server();
+		int status = s.main("Server", args);
+		System.exit(status);
+	}
+}

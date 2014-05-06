@@ -1,0 +1,10 @@
+
+final public class BPHeartRateSensor extends FileOperation {
+
+	@Override
+	public int run(String[] args) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

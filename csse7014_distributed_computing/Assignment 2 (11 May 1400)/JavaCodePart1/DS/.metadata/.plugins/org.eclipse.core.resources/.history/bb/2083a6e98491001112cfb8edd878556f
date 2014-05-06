@@ -1,0 +1,20 @@
+import java.io.RandomAccessFile;
+
+
+abstract public class FileOperation extends Ice.Application {
+
+private RandomAccessFile filePointer;
+
+	protected FileOperation(String file) throws Exception {
+		filePointer = new RandomAccessFile(file,"r");
+	}
+	
+	//Read each line of the file repeatedly and return the String
+		private String getLine() throws Exception {
+		String line;	
+			if ((line = filePointer.readLine()) != null)
+				return line;
+			filePointer.seek(0);
+			return filePointer.readLine();
+		}
+}

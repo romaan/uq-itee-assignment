@@ -1,0 +1,27 @@
+Thursday: Air Condition Adjusted
+Temperature: at 29 degrees
+At home:User1
+Wednesday: Air Condition Adjusted
+Temperature: at 29 degrees
+At home:User1
+Thursday: Air Condition Adjusted
+Temperature: at 29 degrees
+At home:User1
+Wednesday: Air Condition Adjusted
+Temperature: at 25 degrees
+At home:User1
+Thursday: Air Condition Adjusted
+Temperature: at 25 degrees
+At home:User1
+Wednesday: Air Condition Adjusted
+Temperature: at 25 degrees
+At home:User1
+Thursday: Air Condition Adjusted
+Temperature: at 30 degrees
+At home:User1
+Wednesday: Air Condition Adjusted
+Temperature: at 30 degrees
+At home:User1
+Thursday: Air Condition Adjusted
+Temperature: at 29 degrees
+At home:User1

@@ -1,0 +1,29 @@
+Network emulation examples
+
+Note: I have used eth1 for the interface in the examples below; you should use the name of the specific Ethernet card where traffic needs to be throttled.
+
+To add constant delay to every packet going out through a specific interface, use the following command:
+# tc qdisc add dev eth1 root netem delay 80ms
+
+Now a ping test to this host should show an increase of 80ms in the delay to replies.
+
+To add random variance, use the command below:
+# tc qdisc change dev eth1 root netem delay 80ms 10ms
+
+We can also add variable delay (jitter)/Random Variance too. Most wide-area networks like the Internet have some jitter associated with them. The following command will add +/- 10 ms of jitter to the 80 ms of delay.
+# tc qdisc add dev eth1 root netem delay 80ms 10ms
+
+To see what queueing discipline (qdisc) has been applied to an interface, use:
+# tc qdisc show dev eth1
+
+To turn off/delete the qdisc from a specific interface (in this case, eth1), execute the command given below:
+# tc qdisc del dev eth1 root
+
+Typically, the delay in a network is not uniform. It is more common to use something like a normal distribution to describe the variation in delay. NetEM can accept a non-uniform distribution:
+# tc qdisc change dev eth1 root netem delay 100ms 20ms distribution normal
+
+Packet loss can be replicated:
+# tc qdisc change dev eth1 root netem loss 0.1%
+
+Packet duplication/corruption can also be configured:
+# tc qdisc change dev eth1 root netem duplicate/corrupt 1%

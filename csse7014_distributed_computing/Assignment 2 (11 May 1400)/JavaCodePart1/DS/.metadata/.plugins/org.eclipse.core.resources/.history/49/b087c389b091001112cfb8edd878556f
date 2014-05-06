@@ -1,0 +1,51 @@
+import exchange.TemperatureHomemanagerPrx;
+import exchange.TemperatureHomemanagerPrxHelper;
+
+
+final public class BPHeartRateSensor extends FileIceOperation {
+
+private String user; 
+
+	protected BPHeartRateSensor(String file) throws Exception {
+		super(file);
+		getUser(file,"bp.txt");
+	}
+
+	private void getUser(String file, String lastWord) {
+	int lastIndex = file.lastIndexOf(lastWord);
+	int firstIndex = file.lastIndexOf("\\") + 1;
+	user = file.substring(firstIndex,lastIndex);
+	}
+	
+	@Override
+	public int run(String[] args) {
+			try {
+			Ice.ObjectPrx publisher = iceStormSetup(args[0]);  //Sending Topic Name to iceSetup    	        
+		    BpheartrateHomemanagerPrx aBpheartrateHomemanager = TemperatureHomemanagerPrxHelper.uncheckedCast(publisher);
+			
+		    	while(true) {
+		    		String aLine = getLine();
+		    		String[] str = aLine.split(",");
+		    		int time = Integer.parseInt(str[1]);
+		    		String[] heartbpString = str[0].split("_");
+		    		String heartRate = heartbpString[0];
+		    		String bp = heartbpString[1];
+		    		System.out.println("Current Heart Rate:"+heartRate+" Blood Pressure:"+bp+" for user:"+user+" Time:"+time);
+					for (int i = 1; i<= time; i++) {
+						System.out.println("Current Heart Rate:"+heartRate+" Blood Pressure:"+bp+" for user:"+user+" for time:"+time+" now"+i);		
+					aTemperatureHomemanager.temperatureData(temperature);					    	   
+		    	    Thread.sleep(1000L);
+					}
+		    	}
+		    } catch (InterruptedException ex) {
+		        //Ignore
+		    } catch(Ice.CommunicatorDestroyedException ex) {
+		    	//Ignore
+		    } catch (Exception ex) {
+		      System.out.println("Exception :"+ex.getMessage());
+		      return 1;
+		    }
+		return 0;
+	}
+
+}

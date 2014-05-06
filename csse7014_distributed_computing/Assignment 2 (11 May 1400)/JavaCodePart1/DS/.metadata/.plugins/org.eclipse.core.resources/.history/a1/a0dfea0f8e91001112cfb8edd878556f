@@ -1,0 +1,22 @@
+import java.io.RandomAccessFile;
+
+
+abstract public class FileOperation extends Ice.Application {
+
+private RandomAccessFile filePointer;
+
+	//Constructor: Called from its children-> TemperatureSensor.java or BPHearRateSensor.java
+	protected FileOperation() throws Exception {
+		super();
+		filePointer = new RandomAccessFile(".\\src\\datafile\\Temperaute.txt","r");
+	}
+	
+	//Read each line of the file repeatedly and return the String
+	protected String getLine() throws Exception {
+	String line;	
+		if ((line = filePointer.readLine()) != null)
+			return line;
+		filePointer.seek(0);
+		return filePointer.readLine();
+	}
+}

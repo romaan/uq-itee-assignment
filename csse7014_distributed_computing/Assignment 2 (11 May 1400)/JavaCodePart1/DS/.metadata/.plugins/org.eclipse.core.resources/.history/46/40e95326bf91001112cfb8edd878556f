@@ -1,0 +1,117 @@
+/*********************************************
+ * HomeManager.java: 
+(1)Subscribes to Temperature Sensor and BPHeartRate Sensor data via IceStorm
+(2)Provides current temperature and BP Heart Rate to UserInterface via RMI
+*********************************************/
+import java.util.HashMap;
+import java.util.Map;
+
+import exchange._BpheartrateHomemanagerDisp;
+import exchange._TemperatureHomemanagerDisp;
+import exchange._UIHomemanagerDisp;
+import Ice.Current;
+import Ice.ObjectAdapter;
+
+public class HomeManager extends Ice.Application {
+private int temperature;
+private Map<String, String> bpheartrate = new HashMap<String, Integer>();
+final private String proxy = "SmartHome.Proxy";
+
+	//Class that subscribes to Temperature sensor data
+	@SuppressWarnings("serial")
+	public class TemperatureHomemanager extends _TemperatureHomemanagerDisp {
+		@Override
+		public void temperatureData(int data, Current __current) {
+				  temperature = data;	
+		        System.out.println("Current Temperature:"+temperature);
+		}
+	}
+		
+	//Class that subscribes to BPHeartrate sensor data
+	@SuppressWarnings("serial")
+	public class BpheartrateHomemanager extends _BpheartrateHomemanagerDisp {
+		@Override
+		public void bpHeartrateData(int bpHeartrateData, String user, Current __current) {
+			
+			  System.out.println("Current BP:"+bp+" HeartRate:"+heartrate);
+		}
+    }
+	
+	//Class that returns the temperature and bp heart rate data via RMI
+	public class UIHomemanager extends _UIHomemanagerDisp {
+		@Override
+		public int getTemperature(Current __current) {
+			return temperature;
+		}
+
+		@Override
+		public String getBpHeartrate(Current __current) {
+			return bp+":"+heartrate;
+		}		
+	}
+	
+	//Creating connection with the Icebox service via 10000 port by configuring proxy, binding and activating adapter
+	@Override
+	public int run(String[] args) {
+			Ice.ObjectAdapter temperatureAdapter = iceStormSetup(args[0], "HomeManager.Temperature", new TemperatureHomemanager());
+			Ice.ObjectAdapter bpheartrateAdapter = iceStormSetup(args[1], "HomeManager.BPHeartRate", new BpheartrateHomemanager());
+			ObjectAdapter uiAdapter = communicator().createObjectAdapterWithEndpoints("UIRequest","tcp -h 127.0.0.1 -p 10000");
+			uiAdapter.add(new UIHomemanager(), communicator().stringToIdentity("hello"));
+
+	        temperatureAdapter.activate();
+	        bpheartrateAdapter.activate();
+			uiAdapter.activate();
+	        shutdownOnInterrupt();
+	        communicator().waitForShutdown();
+
+	        return 0;
+	}
+	
+	//Activating each adapter by setting up topicName, adapterName and adapterClass instance
+	protected Ice.ObjectAdapter iceStormSetup(String topicName, String adapterName, Object anObject) {
+		IceStorm.TopicManagerPrx manager = IceStorm.TopicManagerPrxHelper.checkedCast(communicator().propertyToProxy(proxy));
+	    IceStorm.TopicPrx topic = null;
+	    Ice.ObjectPrx subscriber;
+	    Ice.ObjectAdapter adapter = communicator().createObjectAdapter(adapterName);
+	    
+        if(manager == null) {
+            System.err.println("Invalid proxy");
+            System.exit(1);
+        }
+        
+        try {
+            topic = manager.retrieve(topicName);
+        } catch(IceStorm.NoSuchTopic e) {
+            try {
+                topic = manager.create(topicName);
+            } catch(IceStorm.TopicExists ex) {
+                System.err.println(appName() + ": temporary failure, try again.");
+            }
+        } 
+        
+        Ice.Identity subId = new Ice.Identity(null, "");
+        subId.name = java.util.UUID.randomUUID().toString();
+        subscriber = adapter.add((Ice.Object) anObject, subId);
+        java.util.Map<String, String> qos = new java.util.HashMap<String, String>();
+
+        subscriber = subscriber.ice_oneway();
+        try
+        {
+            topic.subscribeAndGetPublisher(qos, subscriber);
+        }
+        catch(Exception e)
+        {
+                e.printStackTrace();
+                System.exit(1);
+        }
+        return adapter;
+	}
+	
+	public static void main(String[] args) {
+		HomeManager hm = new HomeManager();
+		String[] myArgs = {"TemperatureSensor","BpHeartrateSensor"};
+        int status = hm.main("HomeManager", myArgs, "config.sub");
+        System.exit(status);
+	}
+
+}

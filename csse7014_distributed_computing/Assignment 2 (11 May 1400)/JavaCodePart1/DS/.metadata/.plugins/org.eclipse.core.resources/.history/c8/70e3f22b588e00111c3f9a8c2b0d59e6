@@ -1,0 +1,15 @@
+
+public class Server extends Ice.Application {
+
+	@Override
+	public int run(String[] args) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public static void main(String [] args) {
+		Server s = new Server();
+		int status = s.main("Server", args);
+		System.exit(status);
+	}
+}

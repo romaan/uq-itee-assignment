@@ -1,0 +1,22 @@
+import Demo.HelloPrx;
+import Demo.HelloPrxHelper;
+
+/*****************************************
+ * SmartHomeUI.java
+ * User Interface to display current temperature, BP and Heart Rate of the current user
+ *
+ ******************************************/
+public class SmartHomeUI extends Ice.Application {
+
+	public static void main(String[] args) {
+		
+	}
+
+	@Override
+	public int run(String[] args) {
+		Ice.ObjectPrx obj = communicator().stringToProxy("UIRequest:tcp -h 127.0.0.1 -p 10000");
+		UIHomemanagerPrx getTemperature = UIHomemanagerPrxHelper.uncheckedCast(obj);
+		String x = hello.sayHello("Its me"+hello.hashCode());
+		return 0;
+	}
+}

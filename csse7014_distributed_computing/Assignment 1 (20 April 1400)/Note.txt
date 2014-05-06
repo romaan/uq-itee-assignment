@@ -1,0 +1,6 @@
+Assignment 1
+
+Programming assignment	
+Due Date: 20 Apr 12 14:00
+Weighting: 22%
+Concept: Design and implementation of a context-aware application

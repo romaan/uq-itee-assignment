@@ -1,0 +1,10 @@
+
+public class MyClass extends Ice.Application {
+
+	@Override
+	public int run(String[] args) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
